@@ -1,0 +1,29 @@
+{
+  "columns": [
+    {
+      "id": "stock",
+      "title": "每日美股分析",
+      "icon": "📊",
+      "description": "美股三大變因、台股關注標的、重點公司追蹤、潛力股分析",
+      "filePattern": "每日美股分析_{date}.md",
+      "altPatterns": ["每日美股分析報告_{date}.md", "美股每日分析_{date}.md"]
+    },
+    {
+      "id": "ai-github",
+      "title": "AI / GitHub 趨勢",
+      "icon": "🤖",
+      "description": "最新 AI 資訊、GitHub 熱門專案、技術趨勢觀察",
+      "filePattern": "AI_GitHub趨勢_{date}.md"
+    }
+  ],
+  "dates": [
+    "2026-03-25",
+    "2026-03-24",
+    "2026-03-23",
+    "2026-03-22",
+    "2026-03-21",
+    "2026-03-20",
+    "2026-03-19"
+  ],
+  "lastUpdated": "2026-03-25"
+}
