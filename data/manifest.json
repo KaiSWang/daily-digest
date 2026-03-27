@@ -6,7 +6,10 @@
       "icon": "📊",
       "description": "美股三大變因、台股關注標的、重點公司追蹤、潛力股分析",
       "filePattern": "每日美股分析_{date}.md",
-      "altPatterns": ["每日美股分析報告_{date}.md", "美股每日分析_{date}.md"]
+      "altPatterns": [
+        "每日美股分析報告_{date}.md",
+        "美股每日分析_{date}.md"
+      ]
     },
     {
       "id": "ai-github",
