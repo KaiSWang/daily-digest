@@ -6,364 +6,383 @@
   <title>KS Daily Digest | 每日資訊電子報</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #0f0f12;
-      --surface: #1a1a22;
-      --surface-hover: #22222e;
-      --border: #2a2a3a;
-      --text: #e8e8f0;
-      --text-secondary: #9090a8;
-      --accent-stock: #f59e0b;
-      --accent-stock-dim: rgba(245, 158, 11, 0.12);
-      --accent-ai: #8b5cf6;
-      --accent-ai-dim: rgba(139, 92, 246, 0.12);
-      --accent-green: #10b981;
-      --accent-red: #ef4444;
-      --radius: 12px;
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --surface-alt: #f0ede6;
+      --border: #ddd8cf;
+      --border-light: #ebe7e0;
+      --text: #2e2e2e;
+      --text-secondary: #7a756d;
+      --text-light: #a09a90;
+      --accent-stock: #b07850;
+      --accent-stock-light: #f5ede6;
+      --accent-ai: #5c7a8a;
+      --accent-ai-light: #e8eff3;
+      --accent-green: #5a7a5a;
+      --accent-red: #a05040;
+      --serif: 'Noto Serif TC', 'Georgia', serif;
+      --sans: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --radius: 4px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-hover: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     body {
-      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Header */
+    /* === Header === */
     .header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 15, 18, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(247, 245, 240, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
     }
 
     .header-inner {
-      max-width: 1200px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent-stock), var(--accent-ai));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 900;
-      color: white;
-    }
-
-    .brand-text h1 {
-      font-size: 18px;
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 22px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      color: var(--text);
+      letter-spacing: -1px;
     }
 
-    .brand-text p {
-      font-size: 11px;
-      color: var(--text-secondary);
-      font-weight: 400;
+    .brand-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
     }
 
-    /* Date Navigation */
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 2px;
+      font-weight: 300;
+    }
+
+    /* === Date Navigation === */
     .date-nav {
       display: flex;
-      align-items: center;
-      gap: 6px;
+      gap: 2px;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
-
     .date-nav::-webkit-scrollbar { display: none; }
 
     .date-btn {
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
+      padding: 5px 12px;
+      border: none;
+      border-radius: 2px;
       background: transparent;
       color: var(--text-secondary);
       font-size: 13px;
-      font-family: 'Noto Sans TC', sans-serif;
+      font-family: var(--sans);
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.2s;
+      transition: all 0.15s ease;
+      letter-spacing: 0.5px;
     }
 
     .date-btn:hover {
-      border-color: var(--text-secondary);
+      background: var(--surface-alt);
       color: var(--text);
     }
 
     .date-btn.active {
       background: var(--text);
       color: var(--bg);
-      border-color: var(--text);
-      font-weight: 500;
     }
 
     .date-btn .weekday {
-      font-size: 11px;
-      opacity: 0.7;
+      font-size: 10px;
+      margin-left: 2px;
+      opacity: 0.6;
     }
 
-    /* Main Content */
+    /* === Main Layout === */
     .main {
-      max-width: 1200px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 0 24px 60px;
     }
 
-    .date-display {
+    /* === Date Display === */
+    .date-hero {
+      padding: 48px 0 36px;
       text-align: center;
-      padding: 32px 0 24px;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 32px;
     }
 
-    .date-display h2 {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, var(--accent-stock), var(--accent-ai));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .date-hero-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 8px;
     }
 
-    .date-display .subtitle {
-      color: var(--text-secondary);
-      font-size: 14px;
-      margin-top: 4px;
+    .date-hero h2 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 1px;
     }
 
-    /* Column Tabs */
+    .date-hero .issue-num {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 6px;
+      letter-spacing: 1px;
+    }
+
+    /* === Column Tabs === */
     .column-tabs {
       display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 0;
+      margin-bottom: 28px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0;
     }
 
     .column-tab {
-      padding: 12px 20px;
+      padding: 10px 20px;
       background: transparent;
       border: none;
-      color: var(--text-secondary);
-      font-size: 15px;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 500;
+      color: var(--text-light);
+      font-size: 14px;
+      font-family: var(--sans);
+      font-weight: 400;
       cursor: pointer;
       position: relative;
       transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      letter-spacing: 0.5px;
     }
 
-    .column-tab:hover { color: var(--text); }
+    .column-tab:hover { color: var(--text-secondary); }
 
-    .column-tab.active { color: var(--text); }
+    .column-tab.active { color: var(--text); font-weight: 500; }
 
     .column-tab.active::after {
       content: '';
       position: absolute;
       bottom: -1px;
-      left: 0;
-      right: 0;
+      left: 20px;
+      right: 20px;
       height: 2px;
-      border-radius: 2px;
     }
 
-    .column-tab[data-col="stock"].active::after {
-      background: var(--accent-stock);
-    }
+    .column-tab[data-col="stock"].active::after { background: var(--accent-stock); }
+    .column-tab[data-col="ai-github"].active::after { background: var(--accent-ai); }
 
-    .column-tab[data-col="ai-github"].active::after {
-      background: var(--accent-ai);
-    }
-
-    .column-tab .tab-icon { font-size: 18px; }
-
-    /* Content Area */
-    .content-area {
-      display: none;
-    }
-
-    .content-area.active {
-      display: block;
-    }
+    /* === Content === */
+    .content-area { display: none; }
+    .content-area.active { display: block; }
 
     .article-card {
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      padding: 32px;
+      padding: 40px 44px;
       margin-bottom: 24px;
-      transition: border-color 0.2s;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
     }
 
-    .article-card:hover {
-      border-color: #3a3a50;
-    }
+    .article-card:hover { box-shadow: var(--shadow-hover); }
 
-    .article-card.stock-card {
-      border-top: 3px solid var(--accent-stock);
-    }
+    .article-card.stock-card { border-top: 2px solid var(--accent-stock); }
+    .article-card.ai-card { border-top: 2px solid var(--accent-ai); }
 
-    .article-card.ai-card {
-      border-top: 3px solid var(--accent-ai);
-    }
-
-    /* Markdown Rendered Content */
+    /* === Markdown Content === */
     .md-content h1 {
-      font-size: 24px;
-      font-weight: 900;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-      line-height: 1.3;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+      color: var(--text);
     }
 
     .md-content h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-top: 32px;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-      letter-spacing: -0.3px;
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-light);
+      letter-spacing: 0.5px;
+      color: var(--text);
     }
 
     .md-content h3 {
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 600;
       margin-top: 24px;
       margin-bottom: 8px;
+      color: var(--text);
     }
 
     .md-content p {
-      margin-bottom: 12px;
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.8;
+      margin-bottom: 14px;
+      font-size: 14.5px;
+      line-height: 2;
+      color: #404040;
     }
 
     .md-content strong {
-      color: #fff;
-      font-weight: 700;
+      color: var(--text);
+      font-weight: 600;
     }
 
     .md-content ul, .md-content ol {
-      margin: 8px 0 16px 24px;
+      margin: 8px 0 16px 20px;
     }
 
     .md-content li {
       margin-bottom: 6px;
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #404040;
+    }
+
+    .md-content li::marker {
+      color: var(--text-light);
     }
 
     .md-content hr {
       border: none;
-      height: 1px;
-      background: var(--border);
-      margin: 28px 0;
+      height: 0;
+      border-top: 1px solid var(--border-light);
+      margin: 32px 0;
+      position: relative;
+    }
+
+    .md-content hr::after {
+      content: '◇';
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface);
+      padding: 0 12px;
+      color: var(--border);
+      font-size: 12px;
     }
 
     .md-content table {
       width: 100%;
       border-collapse: collapse;
       margin: 16px 0;
-      font-size: 14px;
-    }
-
-    .md-content thead th {
-      background: var(--surface-hover);
-      padding: 10px 12px;
-      text-align: left;
-      font-weight: 600;
-      border-bottom: 2px solid var(--border);
-      white-space: nowrap;
-    }
-
-    .md-content tbody td {
-      padding: 8px 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .md-content tbody tr:hover {
-      background: var(--surface-hover);
-    }
-
-    .md-content blockquote {
-      border-left: 3px solid var(--accent-stock);
-      padding: 8px 16px;
-      margin: 12px 0;
-      background: rgba(245, 158, 11, 0.05);
-      border-radius: 0 8px 8px 0;
-      color: var(--text-secondary);
-    }
-
-    .md-content code {
-      font-family: 'JetBrains Mono', monospace;
-      background: var(--surface-hover);
-      padding: 2px 6px;
-      border-radius: 4px;
       font-size: 13px;
     }
 
-    /* Loading & Empty States */
+    .md-content thead th {
+      background: var(--surface-alt);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .md-content tbody td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border-light);
+      color: #404040;
+    }
+
+    .md-content tbody tr:hover { background: var(--surface-alt); }
+
+    .md-content blockquote {
+      border-left: 2px solid var(--accent-stock);
+      padding: 10px 20px;
+      margin: 16px 0;
+      background: var(--accent-stock-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .md-content code {
+      font-family: var(--mono);
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12.5px;
+      color: var(--accent-ai);
+    }
+
+    /* === Loading & Empty === */
     .loading-state, .empty-state {
       text-align: center;
       padding: 60px 20px;
-      color: var(--text-secondary);
+      color: var(--text-light);
     }
 
     .loading-spinner {
-      width: 32px;
-      height: 32px;
-      border: 3px solid var(--border);
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--border);
       border-top-color: var(--accent-ai);
       border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+      animation: spin 1s linear infinite;
       margin: 0 auto 16px;
     }
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .empty-state .empty-icon {
-      font-size: 48px;
+      font-size: 32px;
       margin-bottom: 12px;
+      opacity: 0.5;
     }
 
-    /* Footer */
+    /* === Footer === */
     .footer {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
-      padding: 40px 24px;
-      color: var(--text-secondary);
-      font-size: 13px;
-      border-top: 1px solid var(--border);
-      margin-top: 40px;
+      padding: 32px 24px;
+      color: var(--text-light);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      border-top: 1px solid var(--border-light);
     }
 
     .footer a {
@@ -371,160 +390,111 @@
       text-decoration: none;
     }
 
-    /* Table of Contents / Quick Nav */
-    .quick-nav {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      margin-bottom: 24px;
-    }
-
-    .quick-nav-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .quick-nav-links {
+    .footer-line {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 4px;
     }
 
-    .quick-nav-link {
-      padding: 4px 12px;
-      border-radius: 16px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
+    .footer-dot { color: var(--border); }
 
-    .quick-nav-link:hover {
-      background: var(--surface-hover);
-      color: var(--text);
-    }
-
-    .quick-nav-link.stock-link:hover { background: var(--accent-stock-dim); color: var(--accent-stock); }
-    .quick-nav-link.ai-link:hover { background: var(--accent-ai-dim); color: var(--accent-ai); }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-inner {
-        padding: 12px 16px;
-      }
-
-      .main { padding: 16px; }
-
-      .article-card { padding: 20px; }
-
-      .md-content h1 { font-size: 20px; }
-      .md-content h2 { font-size: 18px; }
-
-      .date-display h2 { font-size: 22px; }
-
-      .column-tab { padding: 10px 14px; font-size: 14px; }
-
-      .md-content table { font-size: 12px; }
-      .md-content thead th, .md-content tbody td { padding: 6px 8px; }
-    }
-
-    /* Scroll to Top */
+    /* === Scroll to Top === */
     .scroll-top {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--surface);
       border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 20px;
+      color: var(--text-secondary);
+      font-size: 14px;
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
       transition: all 0.2s;
       z-index: 50;
+      box-shadow: var(--shadow);
     }
 
     .scroll-top:hover {
-      background: var(--surface-hover);
-      transform: translateY(-2px);
+      background: var(--surface-alt);
+      box-shadow: var(--shadow-hover);
     }
 
     .scroll-top.visible { display: flex; }
 
-    /* Status badges */
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: 600;
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .header-inner { padding: 10px 16px; }
+      .brand-sub { display: none; }
+      .brand-divider { display: none; }
+      .main { padding: 0 16px 40px; }
+      .article-card { padding: 24px 20px; }
+      .md-content h1 { font-size: 19px; }
+      .md-content h2 { font-size: 16px; }
+      .date-hero { padding: 32px 0 24px; }
+      .date-hero h2 { font-size: 22px; }
+      .column-tab { padding: 8px 14px; font-size: 13px; }
+      .md-content table { font-size: 12px; }
+      .md-content thead th, .md-content tbody td { padding: 7px 8px; }
     }
 
-    .status-up { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
-    .status-down { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+    /* === Print === */
+    @media print {
+      .header, .date-nav, .column-tabs, .scroll-top, .footer { display: none; }
+      .content-area { display: block !important; }
+      .article-card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <div class="brand">
-        <div class="brand-logo">K</div>
-        <div class="brand-text">
-          <h1>KS Daily Digest</h1>
-          <p>每日資訊電子報</p>
-        </div>
+        <span class="brand-mark">KS Daily</span>
+        <div class="brand-divider"></div>
+        <span class="brand-sub">每日資訊電子報</span>
       </div>
       <nav class="date-nav" id="dateNav"></nav>
     </div>
   </header>
 
-  <!-- Main -->
   <main class="main">
-    <div class="date-display" id="dateDisplay">
+    <div class="date-hero" id="dateDisplay">
+      <div class="date-hero-label">Daily Digest</div>
       <h2 id="dateTitle"></h2>
-      <p class="subtitle" id="dateSubtitle"></p>
+      <p class="issue-num" id="dateSubtitle"></p>
     </div>
 
-    <!-- Column Tabs -->
     <div class="column-tabs" id="columnTabs">
       <button class="column-tab active" data-col="stock" onclick="switchColumn('stock')">
-        <span class="tab-icon">📊</span> 每日美股分析
+        美股分析
       </button>
       <button class="column-tab" data-col="ai-github" onclick="switchColumn('ai-github')">
-        <span class="tab-icon">🤖</span> AI / GitHub 趨勢
+        AI / GitHub 趨勢
       </button>
     </div>
 
-    <!-- Stock Content -->
     <div class="content-area active" id="content-stock">
       <div class="loading-state" id="loading-stock">
         <div class="loading-spinner"></div>
-        <p>載入中...</p>
+        <p>載入中</p>
       </div>
       <div class="article-card stock-card" id="article-stock" style="display:none;">
         <div class="md-content" id="md-stock"></div>
       </div>
     </div>
 
-    <!-- AI/GitHub Content -->
     <div class="content-area" id="content-ai-github">
       <div class="loading-state" id="loading-ai-github">
         <div class="loading-spinner"></div>
-        <p>載入中...</p>
+        <p>載入中</p>
       </div>
       <div class="article-card ai-card" id="article-ai-github" style="display:none;">
         <div class="md-content" id="md-ai-github"></div>
@@ -532,26 +502,23 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <p>KS Daily Digest &mdash; 自動產出，每日更新</p>
-    <p style="margin-top:4px;">Powered by Claude AI | Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+    <div class="footer-line">
+      <span>KS Daily Digest</span>
+      <span class="footer-dot">·</span>
+      <span>自動產出，每日更新</span>
+    </div>
+    <p>Powered by Claude AI <span class="footer-dot">·</span> <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
   </footer>
 
-  <!-- Scroll to Top -->
   <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
   <script>
-    // === Configuration ===
-    const BASE_URL = ''; // Will be relative to index.html
-
-    // === State ===
+    const BASE_URL = '';
     let currentDate = null;
     let currentColumn = 'stock';
     let manifest = null;
     let contentCache = {};
-
-    // === Weekday Names ===
     const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
 
     function getWeekday(dateStr) {
@@ -566,10 +533,9 @@
 
     function formatDateFull(dateStr) {
       const parts = dateStr.split('-');
-      return `${parts[0]} 年 ${parseInt(parts[1])} 月 ${parseInt(parts[2])} 日（${getWeekday(dateStr)}）`;
+      return `${parts[0]} 年 ${parseInt(parts[1])} 月 ${parseInt(parts[2])} 日　${getWeekday(dateStr)}`;
     }
 
-    // === Load Manifest ===
     async function loadManifest() {
       try {
         const res = await fetch(`${BASE_URL}data/manifest.json?t=${Date.now()}`);
@@ -577,12 +543,10 @@
         return manifest;
       } catch (e) {
         console.error('Failed to load manifest:', e);
-        // Fallback: try to detect available dates
         return null;
       }
     }
 
-    // === Render Date Navigation ===
     function renderDateNav() {
       const nav = document.getElementById('dateNav');
       nav.innerHTML = '';
@@ -595,25 +559,20 @@
       });
     }
 
-    // === Select Date ===
     function selectDate(date) {
       currentDate = date;
-      // Update nav buttons
       document.querySelectorAll('.date-btn').forEach(btn => btn.classList.remove('active'));
       const btns = document.querySelectorAll('.date-btn');
       const idx = manifest.dates.indexOf(date);
       if (btns[idx]) btns[idx].classList.add('active');
 
-      // Update display
       document.getElementById('dateTitle').textContent = formatDateFull(date);
-      document.getElementById('dateSubtitle').textContent = `第 ${manifest.dates.length - idx} / ${manifest.dates.length} 期`;
+      document.getElementById('dateSubtitle').textContent = `No. ${manifest.dates.length - idx} / ${manifest.dates.length}`;
 
-      // Load content
       loadContent('stock', date);
       loadContent('ai-github', date);
     }
 
-    // === Switch Column ===
     function switchColumn(col) {
       currentColumn = col;
       document.querySelectorAll('.column-tab').forEach(t => t.classList.remove('active'));
@@ -622,25 +581,16 @@
       document.getElementById(`content-${col}`).classList.add('active');
     }
 
-    // === Resolve File Path ===
     function getFilePath(colId, date) {
       const col = manifest.columns.find(c => c.id === colId);
-      if (!col) return null;
-
-      // Primary pattern
+      if (!col) return [];
       const primary = `data/${colId}/${col.filePattern.replace('{date}', date)}`;
-
-      // Alt patterns
       const alts = (col.altPatterns || []).map(p => `data/${colId}/${p.replace('{date}', date)}`);
-
       return [primary, ...alts];
     }
 
-    // === Load Content ===
     async function loadContent(colId, date) {
       const cacheKey = `${colId}-${date}`;
-
-      // Show loading
       const loadingEl = document.getElementById(`loading-${colId}`);
       const articleEl = document.getElementById(`article-${colId}`);
       const mdEl = document.getElementById(`md-${colId}`);
@@ -648,7 +598,6 @@
       loadingEl.style.display = 'block';
       articleEl.style.display = 'none';
 
-      // Check cache
       if (contentCache[cacheKey]) {
         renderMarkdown(mdEl, contentCache[cacheKey]);
         loadingEl.style.display = 'none';
@@ -656,20 +605,14 @@
         return;
       }
 
-      // Try to fetch
       const paths = getFilePath(colId, date);
       let content = null;
 
       for (const path of paths) {
         try {
           const res = await fetch(`${BASE_URL}${path}?t=${Date.now()}`);
-          if (res.ok) {
-            content = await res.text();
-            break;
-          }
-        } catch (e) {
-          continue;
-        }
+          if (res.ok) { content = await res.text(); break; }
+        } catch (e) { continue; }
       }
 
       loadingEl.style.display = 'none';
@@ -679,22 +622,17 @@
         renderMarkdown(mdEl, content);
         articleEl.style.display = 'block';
       } else {
-        // Show empty state
-        mdEl.innerHTML = '';
         articleEl.style.display = 'block';
         mdEl.innerHTML = `
           <div class="empty-state">
-            <div class="empty-icon">📭</div>
-            <p>此日期尚無 ${colId === 'stock' ? '美股分析' : 'AI/GitHub 趨勢'} 報告</p>
-            <p style="font-size:13px;margin-top:8px;color:var(--text-secondary)">報告將在排程任務執行後自動產生</p>
-          </div>
-        `;
+            <div class="empty-icon">—</div>
+            <p>此日期尚無${colId === 'stock' ? '美股分析' : 'AI / GitHub 趨勢'}報告</p>
+            <p style="font-size:12px;margin-top:6px;color:var(--text-light)">報告將在排程任務執行後自動產生</p>
+          </div>`;
       }
     }
 
-    // === Render Markdown ===
     function renderMarkdown(el, md) {
-      // Clean up email/LINE status lines at the bottom
       const cleanMd = md
         .replace(/⚠️ 寄信失敗.*$/gm, '')
         .replace(/✅ (摘要已透過|Email).*$/gm, '')
@@ -704,7 +642,6 @@
 
       el.innerHTML = marked.parse(cleanMd);
 
-      // Post-process: highlight positive/negative indicators
       el.querySelectorAll('strong').forEach(strong => {
         const text = strong.textContent;
         if (text.includes('+') && text.match(/[\d.]+%/)) {
@@ -715,26 +652,20 @@
       });
     }
 
-    // === Scroll to Top Button ===
     window.addEventListener('scroll', () => {
-      const btn = document.getElementById('scrollTop');
-      btn.classList.toggle('visible', window.scrollY > 300);
+      document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
     });
 
-    // === Initialize ===
     async function init() {
       const m = await loadManifest();
       if (!m) {
         document.querySelector('.main').innerHTML = `
           <div class="empty-state">
-            <div class="empty-icon">⚠️</div>
-            <p>無法載入資料，請確認 manifest.json 是否存在</p>
-          </div>
-        `;
+            <div class="empty-icon">—</div>
+            <p>無法載入資料</p>
+          </div>`;
         return;
       }
-
-      // Default to latest date
       currentDate = manifest.dates[0];
       renderDateNav();
       selectDate(currentDate);
