@@ -859,8 +859,8 @@
       { name: '白銀', nameEn: 'Silver', symbol: 'OANDA:XAGUSD' },
       { name: 'WTI 原油', nameEn: 'Crude Oil WTI', symbol: 'TVC:USOIL' },
       { name: '布蘭特原油', nameEn: 'Brent Crude', symbol: 'TVC:UKOIL' },
-      { name: '天然氣', nameEn: 'Natural Gas', symbol: 'TVC:NATGAS' },
-      { name: '銅', nameEn: 'Copper', symbol: 'TVC:COPPER' },
+      { name: '天然氣', nameEn: 'Natural Gas', symbol: 'PEPPERSTONE:NATGAS' },
+      { name: '銅', nameEn: 'Copper', symbol: 'COMEX:HG1!' },
     ];
 
     /* === Helpers === */
@@ -1047,7 +1047,10 @@
           autosize: true,
           largeChartUrl: '',
           noTimeScale: false,
-          chartOnly: false
+          chartOnly: false,
+          trendLineColor: 'rgba(41, 128, 185, 1)',
+          underLineColor: 'rgba(41, 128, 185, 0.15)',
+          underLineBottomColor: 'rgba(41, 128, 185, 0.05)'
         };
 
         // Build header
