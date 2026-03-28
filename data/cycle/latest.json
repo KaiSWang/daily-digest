@@ -1,0 +1,70 @@
+{
+  "updatedAt": "2026-03-28",
+  "source": "初始預設值，待排程任務更新",
+  "cycles": [
+    {
+      "name": "DRAM",
+      "phase": "growth",
+      "level": 70,
+      "trend": "up",
+      "note": "AI 伺服器帶動 HBM 需求強勁，DDR5 滲透率持續提升，ASP 穩定上漲",
+      "indicators": ["HBM 供不應求", "DDR5 滲透率 55%+"]
+    },
+    {
+      "name": "NAND Flash",
+      "phase": "peak",
+      "level": 82,
+      "trend": "flat",
+      "note": "企業級 SSD 需求穩健，但消費級 NAND 價格已出現季度下滑壓力",
+      "indicators": ["企業級需求穩健", "消費級價格承壓"]
+    },
+    {
+      "name": "晶圓代工",
+      "phase": "growth",
+      "level": 72,
+      "trend": "up",
+      "note": "AI 晶片需求推動先進製程滿載，成熟製程受車用與工控需求支撐",
+      "indicators": ["先進製程滿載", "成熟製程利用率 80%"]
+    },
+    {
+      "name": "被動元件",
+      "phase": "recovery",
+      "level": 38,
+      "trend": "up",
+      "note": "MLCC 庫存去化接近尾聲，車用與 AI 伺服器帶動高容值產品需求回溫",
+      "indicators": ["庫存水位下降", "ASP 止跌"]
+    },
+    {
+      "name": "面板",
+      "phase": "decline",
+      "level": 25,
+      "trend": "down",
+      "note": "TV 面板價格連續數月下跌，IT 面板需求疲弱，面板廠持續減產",
+      "indicators": ["TV 面板價格 QoQ -8%", "稼動率降至 72%"]
+    },
+    {
+      "name": "PCB",
+      "phase": "recovery",
+      "level": 42,
+      "trend": "up",
+      "note": "AI 伺服器用高層數 HDI/ABF 需求強勁，手機板需求季節性回溫",
+      "indicators": ["AI 伺服器板需求 +30%", "手機板回溫"]
+    },
+    {
+      "name": "車用晶片",
+      "phase": "growth",
+      "level": 62,
+      "trend": "flat",
+      "note": "電動車滲透率持續提升帶動功率半導體需求，但傳統車用 MCU 庫存仍偏高",
+      "indicators": ["EV 滲透率 28%", "MCU 庫存偏高"]
+    },
+    {
+      "name": "IC 設計",
+      "phase": "growth",
+      "level": 65,
+      "trend": "up",
+      "note": "AI ASIC 設計需求爆發，手機 AP 新品週期啟動，但消費性 IC 復甦緩慢",
+      "indicators": ["AI ASIC 設計案 +50%", "消費 IC 緩慢復甦"]
+    }
+  ]
+}

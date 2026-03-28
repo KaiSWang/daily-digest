@@ -23,6 +23,10 @@
       --accent-stock-light: #f5ede6;
       --accent-ai: #5c7a8a;
       --accent-ai-light: #e8eff3;
+      --accent-commodity: #8a7a5c;
+      --accent-commodity-light: #f0ede2;
+      --accent-cycle: #6a7a6a;
+      --accent-cycle-light: #e8ede8;
       --accent-green: #5a7a5a;
       --accent-red: #a05040;
       --serif: 'Noto Serif TC', 'Georgia', serif;
@@ -67,6 +71,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-shrink: 0;
     }
 
     .brand-mark {
@@ -75,6 +80,7 @@
       font-weight: 700;
       color: var(--text);
       letter-spacing: -1px;
+      cursor: pointer;
     }
 
     .brand-divider {
@@ -90,7 +96,55 @@
       font-weight: 300;
     }
 
+    /* === Section Navigation (top-level) === */
+    .section-nav {
+      display: flex;
+      gap: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .section-btn {
+      padding: 10px 18px;
+      border: none;
+      background: transparent;
+      color: var(--text-light);
+      font-size: 13.5px;
+      font-family: var(--sans);
+      font-weight: 400;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .section-btn:hover { color: var(--text-secondary); }
+    .section-btn.active { color: var(--text); font-weight: 500; }
+
+    .section-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 18px;
+      right: 18px;
+      height: 2px;
+      background: var(--text);
+    }
+
     /* === Date Navigation === */
+    .date-nav-bar {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 8px 24px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .date-nav-bar.hidden { display: none; }
+
     .date-nav {
       display: flex;
       gap: 2px;
@@ -113,21 +167,9 @@
       letter-spacing: 0.5px;
     }
 
-    .date-btn:hover {
-      background: var(--surface-alt);
-      color: var(--text);
-    }
-
-    .date-btn.active {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .date-btn .weekday {
-      font-size: 10px;
-      margin-left: 2px;
-      opacity: 0.6;
-    }
+    .date-btn:hover { background: var(--surface-alt); color: var(--text); }
+    .date-btn.active { background: var(--text); color: var(--bg); }
+    .date-btn .weekday { font-size: 10px; margin-left: 2px; opacity: 0.6; }
 
     /* === Main Layout === */
     .main {
@@ -143,6 +185,8 @@
       border-bottom: 1px solid var(--border-light);
       margin-bottom: 32px;
     }
+
+    .date-hero.hidden { display: none; }
 
     .date-hero-label {
       font-size: 11px;
@@ -168,13 +212,15 @@
       letter-spacing: 1px;
     }
 
-    /* === Column Tabs === */
+    /* === Column Tabs (sub-tabs within 每日報告) === */
     .column-tabs {
       display: flex;
       gap: 0;
       margin-bottom: 28px;
       border-bottom: 1px solid var(--border);
     }
+
+    .column-tabs.hidden { display: none; }
 
     .column-tab {
       padding: 10px 20px;
@@ -191,7 +237,6 @@
     }
 
     .column-tab:hover { color: var(--text-secondary); }
-
     .column-tab.active { color: var(--text); font-weight: 500; }
 
     .column-tab.active::after {
@@ -209,6 +254,8 @@
     /* === Content === */
     .content-area { display: none; }
     .content-area.active { display: block; }
+    .page-section { display: none; }
+    .page-section.active { display: block; }
 
     .article-card {
       background: var(--surface);
@@ -221,7 +268,6 @@
     }
 
     .article-card:hover { box-shadow: var(--shadow-hover); }
-
     .article-card.stock-card { border-top: 2px solid var(--accent-stock); }
     .article-card.ai-card { border-top: 2px solid var(--accent-ai); }
 
@@ -263,14 +309,9 @@
       color: #404040;
     }
 
-    .md-content strong {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .md-content strong { color: var(--text); font-weight: 600; }
 
-    .md-content ul, .md-content ol {
-      margin: 8px 0 16px 20px;
-    }
+    .md-content ul, .md-content ol { margin: 8px 0 16px 20px; }
 
     .md-content li {
       margin-bottom: 6px;
@@ -279,9 +320,7 @@
       color: #404040;
     }
 
-    .md-content li::marker {
-      color: var(--text-light);
-    }
+    .md-content li::marker { color: var(--text-light); }
 
     .md-content hr {
       border: none;
@@ -348,6 +387,252 @@
       color: var(--accent-ai);
     }
 
+    .md-content a {
+      color: var(--accent-ai);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .md-content a:hover { border-bottom-color: var(--accent-ai); }
+
+    /* === Commodity Section === */
+    .commodity-section {
+      padding-top: 36px;
+    }
+
+    .commodity-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .commodity-header h2 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .commodity-header p {
+      font-size: 13px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+
+    .commodity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .commodity-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
+    }
+
+    .commodity-card:hover { box-shadow: var(--shadow-hover); }
+
+    .commodity-card-header {
+      padding: 14px 18px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .commodity-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .commodity-name-en {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+
+    .commodity-chart {
+      height: 220px;
+      width: 100%;
+    }
+
+    .commodity-chart iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* === Cycle Section === */
+    .cycle-section {
+      padding-top: 36px;
+    }
+
+    .cycle-header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .cycle-header h2 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .cycle-header p {
+      font-size: 13px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+
+    .cycle-updated {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .cycle-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
+    }
+
+    .cycle-card:hover { box-shadow: var(--shadow-hover); }
+
+    .cycle-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .cycle-card-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cycle-card-phase {
+      font-size: 12px;
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .phase-bottom { background: #e8e3f0; color: #6a5a8a; }
+    .phase-recovery { background: #e2ecf0; color: #4a7a8a; }
+    .phase-growth { background: #e2ede2; color: #4a7a4a; }
+    .phase-peak { background: #f0e8e0; color: #8a6a4a; }
+    .phase-decline { background: #f0e2e2; color: #8a4a4a; }
+
+    .cycle-bar-container {
+      position: relative;
+      height: 8px;
+      background: var(--surface-alt);
+      border-radius: 4px;
+      margin-bottom: 14px;
+      overflow: visible;
+    }
+
+    .cycle-bar-track {
+      display: flex;
+      height: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .cycle-bar-segment {
+      height: 100%;
+      flex: 1;
+    }
+
+    .cycle-bar-segment:nth-child(1) { background: #c4b8d8; }
+    .cycle-bar-segment:nth-child(2) { background: #a8c8d4; }
+    .cycle-bar-segment:nth-child(3) { background: #a8d4a8; }
+    .cycle-bar-segment:nth-child(4) { background: #d4c4a0; }
+    .cycle-bar-segment:nth-child(5) { background: #d4a8a8; }
+
+    .cycle-bar-pointer {
+      position: absolute;
+      top: -4px;
+      width: 16px;
+      height: 16px;
+      background: var(--text);
+      border-radius: 50%;
+      border: 2px solid var(--surface);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      transform: translateX(-50%);
+      transition: left 0.4s ease;
+    }
+
+    .cycle-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      font-size: 10px;
+      color: var(--text-light);
+      letter-spacing: 0.3px;
+    }
+
+    .cycle-card-indicators {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .cycle-indicator {
+      font-size: 12px;
+      padding: 3px 10px;
+      background: var(--surface-alt);
+      border-radius: 3px;
+      color: var(--text-secondary);
+    }
+
+    .cycle-card-note {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    .cycle-trend-up::before { content: '▲ '; color: var(--accent-green); font-size: 10px; }
+    .cycle-trend-down::before { content: '▼ '; color: var(--accent-red); font-size: 10px; }
+    .cycle-trend-flat::before { content: '— '; color: var(--text-light); font-size: 10px; }
+
+    .cycle-legend {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cycle-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .cycle-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
     /* === Loading & Empty === */
     .loading-state, .empty-state {
       text-align: center;
@@ -385,10 +670,7 @@
       border-top: 1px solid var(--border-light);
     }
 
-    .footer a {
-      color: var(--accent-ai);
-      text-decoration: none;
-    }
+    .footer a { color: var(--accent-ai); text-decoration: none; }
 
     .footer-line {
       display: flex;
@@ -421,11 +703,7 @@
       box-shadow: var(--shadow);
     }
 
-    .scroll-top:hover {
-      background: var(--surface-alt);
-      box-shadow: var(--shadow-hover);
-    }
-
+    .scroll-top:hover { background: var(--surface-alt); box-shadow: var(--shadow-hover); }
     .scroll-top.visible { display: flex; }
 
     /* === Responsive === */
@@ -433,6 +711,10 @@
       .header-inner { padding: 10px 16px; }
       .brand-sub { display: none; }
       .brand-divider { display: none; }
+      .section-nav { padding: 0 12px; overflow-x: auto; scrollbar-width: none; }
+      .section-nav::-webkit-scrollbar { display: none; }
+      .section-btn { padding: 10px 12px; font-size: 13px; }
+      .date-nav-bar { padding: 8px 16px; }
       .main { padding: 0 16px 40px; }
       .article-card { padding: 24px 20px; }
       .md-content h1 { font-size: 19px; }
@@ -440,13 +722,15 @@
       .date-hero { padding: 32px 0 24px; }
       .date-hero h2 { font-size: 22px; }
       .column-tab { padding: 8px 14px; font-size: 13px; }
-      .md-content table { font-size: 12px; }
-      .md-content thead th, .md-content tbody td { padding: 7px 8px; }
+      .commodity-grid { grid-template-columns: 1fr; }
+      .commodity-chart { height: 200px; }
+      .cycle-card { padding: 18px 16px; }
+      .cycle-bar-labels { font-size: 9px; }
     }
 
     /* === Print === */
     @media print {
-      .header, .date-nav, .column-tabs, .scroll-top, .footer { display: none; }
+      .header, .section-nav, .date-nav-bar, .column-tabs, .scroll-top, .footer { display: none; }
       .content-area { display: block !important; }
       .article-card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
     }
@@ -457,49 +741,96 @@
   <header class="header">
     <div class="header-inner">
       <div class="brand">
-        <span class="brand-mark">KS Daily</span>
+        <span class="brand-mark" onclick="switchSection('daily')">KS Daily</span>
         <div class="brand-divider"></div>
         <span class="brand-sub">每日資訊電子報</span>
       </div>
-      <nav class="date-nav" id="dateNav"></nav>
     </div>
   </header>
 
+  <!-- Top-level section navigation -->
+  <nav class="section-nav" id="sectionNav">
+    <button class="section-btn active" data-section="daily" onclick="switchSection('daily')">每日報告</button>
+    <button class="section-btn" data-section="commodity" onclick="switchSection('commodity')">大宗商品走勢</button>
+    <button class="section-btn" data-section="cycle" onclick="switchSection('cycle')">產業循環水位</button>
+  </nav>
+
+  <!-- Date navigation (only for daily reports) -->
+  <div class="date-nav-bar" id="dateNavBar">
+    <nav class="date-nav" id="dateNav"></nav>
+  </div>
+
   <main class="main">
-    <div class="date-hero" id="dateDisplay">
-      <div class="date-hero-label">Daily Digest</div>
-      <h2 id="dateTitle"></h2>
-      <p class="issue-num" id="dateSubtitle"></p>
+
+    <!-- ==================== Section: 每日報告 ==================== -->
+    <div class="page-section active" id="section-daily">
+      <div class="date-hero" id="dateDisplay">
+        <div class="date-hero-label">Daily Digest</div>
+        <h2 id="dateTitle"></h2>
+        <p class="issue-num" id="dateSubtitle"></p>
+      </div>
+
+      <div class="column-tabs" id="columnTabs">
+        <button class="column-tab active" data-col="stock" onclick="switchColumn('stock')">美股分析</button>
+        <button class="column-tab" data-col="ai-github" onclick="switchColumn('ai-github')">AI / GitHub 趨勢</button>
+      </div>
+
+      <div class="content-area active" id="content-stock">
+        <div class="loading-state" id="loading-stock">
+          <div class="loading-spinner"></div>
+          <p>載入中</p>
+        </div>
+        <div class="article-card stock-card" id="article-stock" style="display:none;">
+          <div class="md-content" id="md-stock"></div>
+        </div>
+      </div>
+
+      <div class="content-area" id="content-ai-github">
+        <div class="loading-state" id="loading-ai-github">
+          <div class="loading-spinner"></div>
+          <p>載入中</p>
+        </div>
+        <div class="article-card ai-card" id="article-ai-github" style="display:none;">
+          <div class="md-content" id="md-ai-github"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="column-tabs" id="columnTabs">
-      <button class="column-tab active" data-col="stock" onclick="switchColumn('stock')">
-        美股分析
-      </button>
-      <button class="column-tab" data-col="ai-github" onclick="switchColumn('ai-github')">
-        AI / GitHub 趨勢
-      </button>
-    </div>
-
-    <div class="content-area active" id="content-stock">
-      <div class="loading-state" id="loading-stock">
-        <div class="loading-spinner"></div>
-        <p>載入中</p>
-      </div>
-      <div class="article-card stock-card" id="article-stock" style="display:none;">
-        <div class="md-content" id="md-stock"></div>
+    <!-- ==================== Section: 大宗商品走勢 ==================== -->
+    <div class="page-section" id="section-commodity">
+      <div class="commodity-section">
+        <div class="commodity-header">
+          <h2>大宗商品 30 日走勢</h2>
+          <p>即時數據 · 自動更新 · 來源 TradingView</p>
+        </div>
+        <div class="commodity-grid" id="commodityGrid"></div>
       </div>
     </div>
 
-    <div class="content-area" id="content-ai-github">
-      <div class="loading-state" id="loading-ai-github">
-        <div class="loading-spinner"></div>
-        <p>載入中</p>
-      </div>
-      <div class="article-card ai-card" id="article-ai-github" style="display:none;">
-        <div class="md-content" id="md-ai-github"></div>
+    <!-- ==================== Section: 產業循環水位 ==================== -->
+    <div class="page-section" id="section-cycle">
+      <div class="cycle-section">
+        <div class="cycle-header">
+          <h2>產業循環週期水位表</h2>
+          <p>追蹤各產業景氣位置與關鍵指標</p>
+        </div>
+        <div class="cycle-updated" id="cycleUpdated"></div>
+        <div class="cycle-legend">
+          <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#c4b8d8"></div>谷底</div>
+          <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#a8c8d4"></div>復甦</div>
+          <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#a8d4a8"></div>成長</div>
+          <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#d4c4a0"></div>高峰</div>
+          <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#d4a8a8"></div>衰退</div>
+        </div>
+        <div id="cycleCards">
+          <div class="loading-state" id="loading-cycle">
+            <div class="loading-spinner"></div>
+            <p>載入產業循環資料中</p>
+          </div>
+        </div>
       </div>
     </div>
+
   </main>
 
   <footer class="footer">
@@ -517,10 +848,22 @@
     const BASE_URL = '';
     let currentDate = null;
     let currentColumn = 'stock';
+    let currentSection = 'daily';
     let manifest = null;
     let contentCache = {};
     const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
 
+    /* === Commodity Config === */
+    const commodities = [
+      { name: '黃金', nameEn: 'Gold', symbol: 'OANDA:XAUUSD' },
+      { name: '白銀', nameEn: 'Silver', symbol: 'OANDA:XAGUSD' },
+      { name: 'WTI 原油', nameEn: 'Crude Oil WTI', symbol: 'TVC:USOIL' },
+      { name: '布蘭特原油', nameEn: 'Brent Crude', symbol: 'TVC:UKOIL' },
+      { name: '天然氣', nameEn: 'Natural Gas', symbol: 'TVC:NATGAS' },
+      { name: '銅', nameEn: 'Copper', symbol: 'TVC:COPPER' },
+    ];
+
+    /* === Helpers === */
     function getWeekday(dateStr) {
       const d = new Date(dateStr + 'T00:00:00');
       return '週' + weekdays[d.getDay()];
@@ -536,6 +879,38 @@
       return `${parts[0]} 年 ${parseInt(parts[1])} 月 ${parseInt(parts[2])} 日　${getWeekday(dateStr)}`;
     }
 
+    /* === Section Switching === */
+    function switchSection(section) {
+      currentSection = section;
+
+      document.querySelectorAll('.section-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector(`.section-btn[data-section="${section}"]`).classList.add('active');
+
+      document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+      document.getElementById(`section-${section}`).classList.add('active');
+
+      // Show/hide date nav
+      const dateBar = document.getElementById('dateNavBar');
+      if (section === 'daily') {
+        dateBar.classList.remove('hidden');
+      } else {
+        dateBar.classList.add('hidden');
+      }
+
+      // Lazy-load commodity charts
+      if (section === 'commodity' && !document.getElementById('commodityGrid').hasChildNodes()) {
+        renderCommodityCharts();
+      }
+
+      // Lazy-load cycle data
+      if (section === 'cycle' && document.getElementById('loading-cycle')) {
+        loadCycleData();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* === Manifest & Daily Reports === */
     async function loadManifest() {
       try {
         const res = await fetch(`${BASE_URL}data/manifest.json?t=${Date.now()}`);
@@ -652,10 +1027,136 @@
       });
     }
 
+    /* === Commodity Charts (TradingView Widgets) === */
+    function renderCommodityCharts() {
+      const grid = document.getElementById('commodityGrid');
+      grid.innerHTML = '';
+
+      commodities.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'commodity-card';
+
+        const widgetConfig = {
+          symbol: item.symbol,
+          width: '100%',
+          height: '100%',
+          locale: 'zh_TW',
+          dateRange: '1M',
+          colorTheme: 'light',
+          isTransparent: true,
+          autosize: true,
+          largeChartUrl: '',
+          noTimeScale: false,
+          chartOnly: false
+        };
+
+        card.innerHTML = `
+          <div class="commodity-card-header">
+            <span class="commodity-name">${item.name}</span>
+            <span class="commodity-name-en">${item.nameEn}</span>
+          </div>
+          <div class="commodity-chart">
+            <div class="tradingview-widget-container">
+              <div class="tradingview-widget-container__widget"></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+              ${JSON.stringify(widgetConfig)}
+              </script>
+            </div>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    /* === Cycle Data === */
+    async function loadCycleData() {
+      try {
+        const res = await fetch(`${BASE_URL}data/cycle/latest.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error('No cycle data');
+        const data = await res.json();
+        renderCycleCards(data);
+      } catch (e) {
+        console.log('No cycle data yet, showing defaults');
+        renderCycleCards(getDefaultCycleData());
+      }
+    }
+
+    function getDefaultCycleData() {
+      return {
+        updatedAt: new Date().toISOString().slice(0, 10),
+        source: '初始預設值，待排程任務更新',
+        cycles: [
+          { name: 'DRAM', phase: 'growth', level: 70, trend: 'up', note: 'AI 伺服器帶動 HBM 需求強勁，DDR5 滲透率持續提升，ASP 穩定上漲', indicators: ['HBM 供不應求', 'DDR5 滲透率 55%+'] },
+          { name: 'NAND Flash', phase: 'peak', level: 82, trend: 'flat', note: '企業級 SSD 需求穩健，但消費級 NAND 價格已出現季度下滑壓力', indicators: ['企業級需求穩健', '消費級價格承壓'] },
+          { name: '晶圓代工', phase: 'growth', level: 72, trend: 'up', note: 'AI 晶片需求推動先進製程滿載，成熟製程受車用與工控需求支撐', indicators: ['先進製程滿載', '成熟製程利用率 80%'] },
+          { name: '被動元件', phase: 'recovery', level: 38, trend: 'up', note: 'MLCC 庫存去化接近尾聲，車用與 AI 伺服器帶動高容值產品需求回溫', indicators: ['庫存水位下降', 'ASP 止跌'] },
+          { name: '面板', phase: 'decline', level: 25, trend: 'down', note: 'TV 面板價格連續數月下跌，IT 面板需求疲弱，面板廠持續減產', indicators: ['TV 面板價格 QoQ -8%', '稼動率降至 72%'] },
+          { name: 'PCB', phase: 'recovery', level: 42, trend: 'up', note: 'AI 伺服器用高層數 HDI/ABF 需求強勁，手機板需求季節性回溫', indicators: ['AI 伺服器板需求 +30%', '手機板回溫'] },
+          { name: '車用晶片', phase: 'growth', level: 62, trend: 'flat', note: '電動車滲透率持續提升帶動功率半導體需求，但傳統車用 MCU 庫存仍偏高', indicators: ['EV 滲透率 28%', 'MCU 庫存偏高'] },
+          { name: 'IC 設計', phase: 'growth', level: 65, trend: 'up', note: 'AI ASIC 設計需求爆發，手機 AP 新品週期啟動，但消費性 IC 復甦緩慢', indicators: ['AI ASIC 設計案 +50%', '消費 IC 緩慢復甦'] },
+        ]
+      };
+    }
+
+    const phaseMap = {
+      bottom: { label: '谷底', class: 'phase-bottom' },
+      recovery: { label: '復甦', class: 'phase-recovery' },
+      growth: { label: '成長', class: 'phase-growth' },
+      peak: { label: '高峰', class: 'phase-peak' },
+      decline: { label: '衰退', class: 'phase-decline' },
+    };
+
+    const trendMap = {
+      up: 'cycle-trend-up',
+      down: 'cycle-trend-down',
+      flat: 'cycle-trend-flat',
+    };
+
+    function renderCycleCards(data) {
+      const container = document.getElementById('cycleCards');
+      document.getElementById('cycleUpdated').textContent = `最近更新：${data.updatedAt}${data.source ? '　·　' + data.source : ''}`;
+
+      let html = '';
+      data.cycles.forEach(c => {
+        const p = phaseMap[c.phase] || phaseMap.growth;
+        const trendClass = trendMap[c.trend] || '';
+        const indicatorsHtml = (c.indicators || []).map(i => `<span class="cycle-indicator">${i}</span>`).join('');
+
+        html += `
+          <div class="cycle-card">
+            <div class="cycle-card-top">
+              <span class="cycle-card-name">${c.name}</span>
+              <span class="cycle-card-phase ${p.class}">${p.label}</span>
+            </div>
+            <div class="cycle-bar-container">
+              <div class="cycle-bar-track">
+                <div class="cycle-bar-segment"></div>
+                <div class="cycle-bar-segment"></div>
+                <div class="cycle-bar-segment"></div>
+                <div class="cycle-bar-segment"></div>
+                <div class="cycle-bar-segment"></div>
+              </div>
+              <div class="cycle-bar-pointer" style="left:${c.level}%"></div>
+            </div>
+            <div class="cycle-bar-labels">
+              <span>谷底</span><span>復甦</span><span>成長</span><span>高峰</span><span>衰退</span>
+            </div>
+            <div class="cycle-card-indicators">${indicatorsHtml}</div>
+            <div class="cycle-card-note ${trendClass}">${c.note}</div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    /* === Scroll === */
     window.addEventListener('scroll', () => {
       document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
     });
 
+    /* === Init === */
     async function init() {
       const m = await loadManifest();
       if (!m) {
