@@ -1,70 +1,70 @@
 {
   "updatedAt": "2026-03-28",
-  "source": "初始預設值，待排程任務更新",
+  "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報",
   "cycles": [
     {
       "name": "DRAM",
-      "phase": "growth",
-      "level": 70,
+      "phase": "peak",
+      "level": 83,
       "trend": "up",
-      "note": "AI 伺服器帶動 HBM 需求強勁，DDR5 滲透率持續提升，ASP 穩定上漲",
-      "indicators": ["HBM 供不應求", "DDR5 滲透率 55%+"]
+      "note": "HBM 需求完全售罄至 2026 年底，三大廠產能全數預訂；Q1 2026 傳統 DRAM 合約價 QoQ 大幅跳漲 90–95%，為史上最大漲幅，全球庫存僅剩 2–3 週歷史低點。DDR5 市佔率達 45–50%，伺服器 DRAM 需求仍強勁。",
+      "indicators": ["Q1 2026 傳統 DRAM 合約價 QoQ +90–95%", "全球 DRAM 庫存僅 2–3 週（歷史低點）"]
     },
     {
       "name": "NAND Flash",
       "phase": "peak",
-      "level": 82,
-      "trend": "flat",
-      "note": "企業級 SSD 需求穩健，但消費級 NAND 價格已出現季度下滑壓力",
-      "indicators": ["企業級需求穩健", "消費級價格承壓"]
+      "level": 85,
+      "trend": "up",
+      "note": "企業級 SSD 供應極度緊張，Q1 2026 價格 QoQ 上漲 33–38%（部分報告達 55–60%），30TB TLC 企業級 SSD 單價從 Q2 2025 的 $3,062 飆升至 $10,950。原廠庫存僅 3–4 週，Q2 2026 存在「斷貨年」風險，消費端已被降低優先度。",
+      "indicators": ["Q1 2026 企業級 SSD 價格 QoQ +33–60%", "廠商庫存僅 3–4 週，Q2 2026 恐面臨斷貨"]
     },
     {
       "name": "晶圓代工",
       "phase": "growth",
-      "level": 72,
+      "level": 75,
       "trend": "up",
-      "note": "AI 晶片需求推動先進製程滿載，成熟製程受車用與工控需求支撐",
-      "indicators": ["先進製程滿載", "成熟製程利用率 80%"]
+      "note": "台積電先進製程（3nm/5nm）稼動率接近 100%，訂單能見度延伸至 2027 年；聯電 Q4 2025 稼動率 78%、Q1 2026 指引維持中 70% 水準；中芯 2025 年全年稼動率 93.5%（YoY +8 個百分點）。全球晶圓代工 2026 年營收預估成長 24.8% YoY，台積電單獨預估 +32% YoY。",
+      "indicators": ["台積電先進製程稼動率近 100%，聯電稼動率 78%", "2026 年全球晶圓代工營收 YoY +24.8%"]
     },
     {
       "name": "被動元件",
       "phase": "recovery",
-      "level": 38,
+      "level": 55,
       "trend": "up",
-      "note": "MLCC 庫存去化接近尾聲，車用與 AI 伺服器帶動高容值產品需求回溫",
-      "indicators": ["庫存水位下降", "ASP 止跌"]
+      "note": "市場呈現「K 形復甦」：一般規格 MLCC 庫存正常化（OEM 庫存 4–6 週），但 AI 伺服器與車用高規品全面缺貨，Murata/TDK/太陽誘電高規品產線已滿載；AI 伺服器 MLCC 需求 CAGR 達 30%，單機架用量高達 440,000 顆。鉭質電容與聚合物電容開始出現短缺跡象，台廠 2026 年營收預估成長 20–30%。",
+      "indicators": ["車用與 AI 伺服器高規 MLCC 前置週期 >20 週", "AI 伺服器 MLCC 需求 CAGR 30%，單架需求 44 萬顆"]
     },
     {
       "name": "面板",
-      "phase": "decline",
-      "level": 25,
-      "trend": "down",
-      "note": "TV 面板價格連續數月下跌，IT 面板需求疲弱，面板廠持續減產",
-      "indicators": ["TV 面板價格 QoQ -8%", "稼動率降至 72%"]
+      "phase": "recovery",
+      "level": 32,
+      "trend": "up",
+      "note": "TV 面板價格於 2025 年 12 月企穩（65 吋均價 $168、55 吋均價 $121），Q1 2026 預期小幅回升；智慧型手機面板 Q3 2025 出貨量 QoQ +8.1%、YoY +5.3%（5.86 億片），AMOLED 2026 年滲透率預估突破 45%。筆電面板需求仍疲軟，預估 2026 年 YoY -7.9%。",
+      "indicators": ["TV 面板 12 月底價企穩，Q1 2026 預期回升", "手機面板 Q3 2025 出貨 QoQ +8.1%，AMOLED 滲透率 >45%"]
     },
     {
       "name": "PCB",
       "phase": "recovery",
-      "level": 42,
+      "level": 55,
       "trend": "up",
-      "note": "AI 伺服器用高層數 HDI/ABF 需求強勁，手機板需求季節性回溫",
-      "indicators": ["AI 伺服器板需求 +30%", "手機板回溫"]
+      "note": "AI 伺服器帶動 PCB 產業結構升級，AI 伺服器 PCB 佔整體市場比例從 2025 年的 15% 跳升至 2026 年的 25%，層數從 16–20 層提升至 28–36 層，單機價值量 +30%；ABF 載板市場規模 2025 年 $54.2 億美元，雙位數漲價。CCL 市場 2026 年成長 9.5% 至 $191.9 億美元。",
+      "indicators": ["AI 伺服器 PCB 佔比從 15% 升至 25%，ABF 載板價格雙位數漲幅", "PCB 全球市場 2026 年規模 $849.1 億美元"]
     },
     {
       "name": "車用晶片",
-      "phase": "growth",
-      "level": 62,
-      "trend": "flat",
-      "note": "電動車滲透率持續提升帶動功率半導體需求，但傳統車用 MCU 庫存仍偏高",
-      "indicators": ["EV 滲透率 28%", "MCU 庫存偏高"]
+      "phase": "recovery",
+      "level": 40,
+      "trend": "up",
+      "note": "整體車用半導體 2026 年市場規模達 $880.8 億美元（YoY +10.4%），庫存調整期結束進入復甦；SiC 車用市場 2026 年達 $39.8 億美元（CAGR 38%），汽車 MCU 市場 $123.4 億美元（YoY +8.18%）。EV 每台車需求半導體內容量為 ICE 車的 2.5 倍，結構性需求仍強。",
+      "indicators": ["SiC 車用市場 2026 年達 $39.8 億美元（CAGR 38%）", "汽車 MCU 市場 $123.4 億美元，YoY +8.18%"]
     },
     {
-      "name": "IC 設計",
+      "name": "IC設計",
       "phase": "growth",
       "level": 65,
       "trend": "up",
-      "note": "AI ASIC 設計需求爆發，手機 AP 新品週期啟動，但消費性 IC 復甦緩慢",
-      "indicators": ["AI ASIC 設計案 +50%", "消費 IC 緩慢復甦"]
+      "note": "AI ASIC 設計案量爆發：MediaTek 2026 年 ASIC 營收目標 $10 億美元，2027 年 AI 晶片佔比衝向 20%；Alchip 取得 AWS Trainium 3 訂單（3nm，Q2 2026 量產）。消費端呈現分化：手機 AP Q1 2026 出貨預估 YoY -10%，記憶體漲價壓縮低階裝置需求；AI 伺服器 ASIC 佔比已達 28%，為長期成長主引擎。",
+      "indicators": ["MediaTek 2026 AI ASIC 營收目標 $10 億美元，AI 伺服器 ASIC 佔比達 28%", "手機 AP Q1 2026 出貨 YoY -10%，消費端承壓"]
     }
   ]
 }
