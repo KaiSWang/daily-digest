@@ -1050,21 +1050,31 @@
           chartOnly: false
         };
 
-        card.innerHTML = `
-          <div class="commodity-card-header">
-            <span class="commodity-name">${item.name}</span>
-            <span class="commodity-name-en">${item.nameEn}</span>
-          </div>
-          <div class="commodity-chart">
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-              ${JSON.stringify(widgetConfig)}
-              </script>
-            </div>
-          </div>
-        `;
+        // Build header
+        const header = document.createElement('div');
+        header.className = 'commodity-card-header';
+        header.innerHTML = '<span class="commodity-name">' + item.name + '</span><span class="commodity-name-en">' + item.nameEn + '</span>';
+        card.appendChild(header);
 
+        // Build chart container
+        const chartDiv = document.createElement('div');
+        chartDiv.className = 'commodity-chart';
+        const container = document.createElement('div');
+        container.className = 'tradingview-widget-container';
+        const widgetEl = document.createElement('div');
+        widgetEl.className = 'tradingview-widget-container__widget';
+        container.appendChild(widgetEl);
+
+        // Dynamically create script element (avoids breaking HTML parser)
+        const scriptEl = document.createElement('script');
+        scriptEl.type = 'text/javascript';
+        scriptEl.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
+        scriptEl.async = true;
+        scriptEl.textContent = JSON.stringify(widgetConfig);
+        container.appendChild(scriptEl);
+
+        chartDiv.appendChild(container);
+        card.appendChild(chartDiv);
         grid.appendChild(card);
       });
     }
