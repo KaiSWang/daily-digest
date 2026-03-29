@@ -419,6 +419,12 @@
       letter-spacing: 0.5px;
     }
 
+    .commodity-updated {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
     .commodity-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -802,6 +808,7 @@
         <div class="commodity-header">
           <h2>大宗商品 30 日走勢</h2>
           <p>即時數據 · 自動更新 · 來源 TradingView</p>
+          <p class="commodity-updated" id="commodityUpdated"></p>
         </div>
         <div class="commodity-grid" id="commodityGrid"></div>
       </div>
@@ -1030,6 +1037,11 @@
     function renderCommodityCharts() {
       const grid = document.getElementById('commodityGrid');
       grid.innerHTML = '';
+
+      // 顯示更新時間
+      const now = new Date();
+      const timeStr = now.getFullYear() + '/' + String(now.getMonth() + 1).padStart(2, '0') + '/' + String(now.getDate()).padStart(2, '0') + ' ' + String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('commodityUpdated').textContent = '更新時間：' + timeStr;
 
       commodities.forEach(item => {
         const card = document.createElement('div');
