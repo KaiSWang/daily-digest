@@ -1,34 +1,70 @@
-{ "updatedAt": "2026-03-30", "source": "綜合 
-TrendForce、DIGITIMES、Omdia、Counterpoint Research、各廠財報", "cycles": [ { 
-"name": "DRAM", "phase": "peak", "level": 82, "trend": "up", "note": "Q1 
-2026 合約價 QoQ 飆升 90-95%（PC DRAM 超過 100%），為史上最大單季漲幅；HBM 全年供應已被 NVIDIA 等 AI 
-廠商預訂一空，SK Hynix 2026 年 HBM 產能完售，整體庫存僅剩 2-3 週歷史低位。", "indicators": ["合約價 QoQ 
-+90~95%（PC DRAM +100%）", "業界庫存 2-3 週（歷史低位）"] }, { "name": "NAND Flash", 
-"phase": "growth", "level": 72, "trend": "up", "note": "Q1 2026 整體 NAND 合約價 
-QoQ 漲 55-60%，企業級 SSD 漲幅超 100%；主要原廠（SK Hynix、Kioxia、Micron）協調減產維持定價權，Kioxia 
-2026 年產能已售罄，庫存僅剩 3-4 週。", "indicators": ["企業級 SSD 合約價 QoQ +100%+", "原廠庫存 
-3-4 週（接近耗盡）"] }, { "name": "晶圓代工", "phase": "growth", "level": 68, "trend": 
-"up", "note": "TSMC 先進製程（2/3/4/5nm）全線滿載，2nm 產能已排至 2026 年底；整體晶圓代工市場 2026 
-年預估成長 +24.8% YoY，但 UMC/SMIC 成熟製程稼動率降至 60-70%，呈現明顯結構分化。", "indicators": 
-["TSMC 先進製程稼動率 ~100%，UMC 成熟製程 ~60-70%", "2026 年晶圓代工市場規模 $2,188 億（YoY 
-+24.8%）"] }, { "name": "被動元件", "phase": "recovery", "level": 58, "trend": 
-"up", "note": "市場呈現 K 型分化：Murata 等日系高規 MLCC 稼動率超 80%，AI 伺服器相關高端品 Q1 訂單量 QoQ 
-增 20-25%，並確認 4 月 1 日調漲；但消費性/台系廠庫存仍高達 60-75 天，稼動率維持 60-70%。", "indicators": 
-["日系高規 MLCC 稼動率 >80%，AI 伺服器訂單 QoQ +20-25%", "台/中系廠庫存天數 60-75 天，稼動率 60-70%"] 
-}, { "name": "面板", "phase": "recovery", "level": 48, "trend": "up", "note": 
-"面板價格於 2025 年 12 月觸底後持續反彈，Q1 2026 TV 面板每月漲 $1-3 美元；Omdia 估 Q1 全行業稼動率升至 
-82%，但 TrendForce 預估 5 月後稼動率恐跌破 80%，復甦力道仍脆弱。", "indicators": ["Q1 面板廠平均稼動率 
-82%（Omdia）", "TV 面板月均漲幅 $1-3/片（2026 年 1-3 月）"] }, { "name": "PCB", "phase": 
-"growth", "level": 67, "trend": "up", "note": "AI 伺服器帶動 PCB 需求快速成長，2026 年 
-AI 伺服器用 PCB 佔整體比重從 15% 升至 25%，ABF 載板供應緊俏；NVIDIA Blackwell GB300 需 28-34 層高端 
-PCB，銅箔基板及黃金原料漲價壓縮載板廠毛利。", "indicators": ["AI 伺服器 PCB 市占從 15% 升至 25%（YoY）", 
-"ABF 載板伺服器/HPC 市場規模 $11.27 億，CAGR 16.3%"] }, { "name": "車用晶片", "phase": 
-"growth", "level": 62, "trend": "flat", "note": "SiC/IGBT 
-功率半導體持續供應吃緊，現貨價仍高於疫前 2-5 倍；MCU 交期仍達 40-50 週；全球 EV 滲透率 2026 年預估達 27.5%，中國超 
-33%，但美國僅 5.8%（稅收抵免到期影響），需求動能出現地區分化。", "indicators": ["全球 EV 滲透率 27.5%（2026 
-預估），中國 >33%", "車用 MCU 交期 40-50 週，SiC 現貨價仍 2-5 倍疫前水準"] }, { "name": "IC設計", 
-"phase": "growth", "level": 71, "trend": "up", "note": "AI ASIC 設計案量爆發，CSP 
-自研 ASIC 出貨量 2026 年預估成長 44.6%（遠超 GPU 的 16.1%）；MediaTek Dimensity 9500 及 
-Snapdragon 8 Elite Gen 5 等旗艦手機 AP 新品週期帶動手機設計需求，消費性 IC 庫存已恢復正常水位。", 
-"indicators": ["CSP 自研 AI ASIC 出貨 YoY +44.6%", "消費性 IC 庫存周轉率回歸歷史均值，手機 AP 
-新品週期正常"] } ] }
+{
+  "updatedAt": "2026-04-06",
+  "source": "綜合 TrendForce、DIGITIMES、Omdia、Counterpoint、IC Insights、各廠財報",
+  "cycles": [
+    {
+      "name": "DRAM",
+      "phase": "peak",
+      "level": 88,
+      "trend": "up",
+      "note": "Q1'26 合約價 QoQ 漲幅達 90-95% 創歷史新高，Q2'26 預估再漲 58-63% QoQ。HBM 產能排擠傳統 DRAM，三大廠將產能大幅轉向 AI 伺服器應用，DDR5 合約價獲利預期已超越 HBM3e。",
+      "indicators": ["Q2'26 DRAM 合約價 QoQ +58~63%", "HBM 佔用晶圓產能為傳統 DRAM 的 3 倍以上"]
+    },
+    {
+      "name": "NAND Flash",
+      "phase": "peak",
+      "level": 85,
+      "trend": "up",
+      "note": "Q2'26 合約價預估 QoQ 漲 70-75%，較 Q1 的 55-60% 加速。企業級 SSD 成為最大應用，原廠庫存接近耗盡，2026 年需求成長 20-22% YoY 但供給僅增 15-17%，供需缺口持續擴大。",
+      "indicators": ["Q2'26 NAND 合約價 QoQ +70~75%", "2026 供需缺口：需求 +20-22% vs 供給 +15-17%"]
+    },
+    {
+      "name": "晶圓代工",
+      "phase": "growth",
+      "level": 72,
+      "trend": "up",
+      "note": "台積電 3nm/5nm 先進製程產能利用率達 100%，3nm 月產能預計年底達 18-20 萬片。但成熟製程承壓，聯電稼動率 H2 恐降至 60% 以下，已通知供應商 2026 年起降價 15%，先進 vs 成熟製程明顯分化。",
+      "indicators": ["TSMC 3nm/5nm 產能利用率 100%", "UMC 成熟製程稼動率 H2'26 預估 ≤60%"]
+    },
+    {
+      "name": "被動元件",
+      "phase": "recovery",
+      "level": 38,
+      "trend": "up",
+      "note": "市場呈兩極化：高階 MLCC（AI 伺服器/車用）需求強勁回升，AI 伺服器 MLCC 用量為傳統伺服器 5-10 倍；但中低階消費性 MLCC 仍受季節性低迷影響。台系/陸系廠稼動率約 60-70%，庫存天數 60-75 天。Murata 評估對 AI 伺服器 MLCC 漲價。",
+      "indicators": ["台系/陸系 MLCC 稼動率 60-70%", "庫存天數 60-75 天"]
+    },
+    {
+      "name": "面板",
+      "phase": "growth",
+      "level": 62,
+      "trend": "up",
+      "note": "Q1'26 面板廠稼動率升至 82%，但 5 月起可能降至 80% 以下。TV/IT 面板價格因美國關稅政策帶動提前拉貨而持續上漲，預估漲勢延續至 Q2 中期。記憶體漲價推升 TV BOM 成本（記憶體佔比從 2.5-3% 升至 6-7%），TrendForce 下修 2026 全球 TV 出貨至 1.948 億台（YoY -0.6%）。",
+      "indicators": ["Q1'26 面板廠稼動率 82%", "2026 全球 TV 出貨預估 1.948 億台（YoY -0.6%）"]
+    },
+    {
+      "name": "PCB",
+      "phase": "growth",
+      "level": 68,
+      "trend": "up",
+      "note": "AI 伺服器帶動 HDI/ABF 載板需求，台灣電腦相關 PCB 出貨 Q3'25 YoY +25.2%，AI 伺服器全年出貨量 YoY +82.8%。ABF 載板交期仍逾 30 週，CCL 價格近兩年漲近 100%。2026 年起導入 M9 材料，高階 PCB 價格預估再漲 30-50%。銅價預估 2026 年達 $12,075/噸。",
+      "indicators": ["AI 伺服器 PCB 出貨 YoY +82.8%", "高階 ABF 載板交期 >30 週"]
+    },
+    {
+      "name": "車用晶片",
+      "phase": "recovery",
+      "level": 35,
+      "trend": "up",
+      "note": "MCU 庫存逐步正常化，交期從 2022 年 52+ 週降至 20-24 週，庫銷比回歸歷史常態。SiC 功率元件市場 2026 年產值預估達 $53.3 億，EV 滲透率約 27.5%，SiC MOSFET 在高階車款逆變器滲透率已超過 50%。歐洲新建 SiC 晶圓廠 2026 年投產。",
+      "indicators": ["全球 EV 滲透率 ~27.5%", "車用 MCU 交期降至 20-24 週"]
+    },
+    {
+      "name": "IC 設計",
+      "phase": "growth",
+      "level": 55,
+      "trend": "up",
+      "note": "台灣 IC 設計業正從消費性轉向 AI 驅動的結構性轉型，AI 晶片設計佔總產值約 15-20%。但面臨美中競爭壓力，全球營收排名恐退至第三。消費性 IC 處於高基期穩定階段，AI ASIC 設計案量持續增長，聯發科等大廠積極布局 AI 與客製化 ASIC。",
+      "indicators": ["AI 晶片設計佔台灣 IC 設計產值 15-20%", "台灣 IC 設計全球排名面臨降至第三風險"]
+    }
+  ]
+}
