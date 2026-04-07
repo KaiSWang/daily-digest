@@ -3,10 +3,26 @@
   "source": "綜合 TrendForce、DIGITIMES、Omdia、Counterpoint、IC Insights、各廠財報",
   "disclaimer": "以下個股僅為產業代表性觀察名單，非投資建議",
   "signalLegend": {
-    "GREEN": "������ 可佈局：景氣低檔翻揚，最佳進場區",
-    "YELLOW": "������ 持有/留意：仍有上行空間但非最佳進場點",
-    "ORANGE": "������ 謹慎/分批獲利：末升段",
-    "RED": "������ 避開/減碼：高檔轉折或下行"
+    "GREEN": "🟢 可佈局：景氣低檔翻揚，最佳進場區",
+    "YELLOW": "🟡 持有/留意：仍有上行空間但非最佳進場點",
+    "ORANGE": "🟠 謹慎/分批獲利：末升段",
+    "RED": "🔴 避開/減碼：高檔轉折或下行"
+  },
+  "methodology": {
+    "framework": "每個產業 level 由 4 個面向綜合打分，每項 0-25，加總 0-100",
+    "dimensions": [
+      {"key": "price", "name": "價格動能", "desc": "合約價／ASP 的 QoQ 變化"},
+      {"key": "utilization", "name": "產能利用率", "desc": "原廠／代工廠稼動率"},
+      {"key": "inventory", "name": "庫存水位", "desc": "庫存天數、交期長短"},
+      {"key": "demand", "name": "需求強度", "desc": "終端拉貨、訂單能見度"}
+    ],
+    "phaseMapping": "0-20 谷底｜20-40 復甦｜40-60 成長初期｜60-80 成長中後段｜80-100 高峰／衰退",
+    "signalRule": "signal 由 phase + level + trend 規則化推導",
+    "limitations": [
+      "權重分配與質化項目含主觀成分，不同分析師可能差 ±10",
+      "相對排序有產業數據支撐，絕對數字僅供參考",
+      "目前無歷史 level 序列存檔，建議未來寫入 xlsx 追蹤真實軌跡"
+    ]
   },
   "cycles": [
     {
@@ -14,56 +30,88 @@
       "phase": "peak", "level": 88, "trend": "up", "signal": "ORANGE",
       "note": "Q1'26 合約價 QoQ +90-95% 創歷史新高，Q2'26 預估再漲 58-63%。HBM 排擠傳統 DRAM 產能，DDR5 獲利已超越 HBM3e。已屬末升段，宜分批獲利。",
       "indicators": ["Q2'26 DRAM 合約價 QoQ +58~63%", "HBM 佔晶圓產能為傳統 DRAM 的 3 倍以上"],
-      "watchlist": {"tw": "南亞科 (2408)", "us": "Micron (MU)"}
+      "watchlist": {"tw": "南亞科 (2408)", "us": "Micron (MU)"},
+      "scoreBreakdown": {
+        "price": 25, "utilization": 23, "inventory": 22, "demand": 18,
+        "rationale": "價格創紀錄拉滿；HBM 排擠效應使稼動率滿載；原廠庫存近清空；消費端開始砍規格故需求扣分"
+      }
     },
     {
       "name": "NAND Flash",
       "phase": "peak", "level": 85, "trend": "up", "signal": "ORANGE",
       "note": "Q2'26 合約價預估 QoQ +70-75%，企業級 SSD 需求爆發，原廠庫存接近耗盡。價格動能仍強但循環位置偏高。",
       "indicators": ["Q2'26 NAND 合約價 QoQ +70~75%", "2026 需求 +20-22% vs 供給 +15-17%"],
-      "watchlist": {"tw": "群聯 (8299)", "us": "SanDisk (SNDK)"}
+      "watchlist": {"tw": "群聯 (8299)", "us": "SanDisk (SNDK)"},
+      "scoreBreakdown": {
+        "price": 25, "utilization": 22, "inventory": 22, "demand": 16,
+        "rationale": "Q2 漲幅創新高；原廠 2H25 主動減產；庫存接近耗盡；企業強消費弱"
+      }
     },
     {
       "name": "晶圓代工",
       "phase": "growth", "level": 72, "trend": "up", "signal": "ORANGE",
       "note": "台積電 3nm/5nm 滿載至 2028；成熟製程承壓，聯電 2026 對供應商降價 15%。先進與成熟分化，個股選擇重於產業 beta。",
       "indicators": ["TSMC 3nm/5nm 產能利用率 100%", "UMC 成熟製程稼動率 H2'26 預估 ≤60%"],
-      "watchlist": {"tw": "台積電 (2330)", "us": "GlobalFoundries (GFS)"}
+      "watchlist": {"tw": "台積電 (2330)", "us": "GlobalFoundries (GFS)"},
+      "scoreBreakdown": {
+        "price": 18, "utilization": 19, "inventory": 17, "demand": 18,
+        "rationale": "加權平均：台積電先進製程 ≈90（滿載到 2028），聯電成熟 ≈50（H2 跌破 60%、降價 15%），先進營收占比較大故加權後 72"
+      }
     },
     {
       "name": "被動元件",
       "phase": "recovery", "level": 38, "trend": "up", "signal": "GREEN",
       "note": "高階 MLCC（AI 伺服器/車用）需求強勁回升，AI 伺服器用量為傳統 5-10 倍；中低階仍弱。整體稼動率 60-70% 屬循環低檔翻揚，最佳佈局區。",
       "indicators": ["台/陸 MLCC 稼動率 60-70%", "庫存天數 60-75 天"],
-      "watchlist": {"tw": "國巨 (2327)", "us": "Vishay (VSH)"}
+      "watchlist": {"tw": "國巨 (2327)", "us": "Vishay (VSH)"},
+      "scoreBreakdown": {
+        "price": 10, "utilization": 15, "inventory": 8, "demand": 5,
+        "rationale": "僅高階漲價；稼動率仍在 60-70% 低檔；庫存 60-75 天偏高；需求兩極化整體偏弱"
+      }
     },
     {
       "name": "面板",
       "phase": "growth", "level": 62, "trend": "up", "signal": "YELLOW",
       "note": "Q1'26 稼動率 82%，TV/IT 面板價格因美國關稅拉貨延續至 Q2 中期，但 5 月後恐回落 80% 以下。短多但需留意轉折。",
       "indicators": ["Q1'26 面板廠稼動率 82%", "2026 全球 TV 出貨 1.948 億台 (YoY -0.6%)"],
-      "watchlist": {"tw": "友達 (2409)", "us": "Corning (GLW)"}
+      "watchlist": {"tw": "友達 (2409)", "us": "Corning (GLW)"},
+      "scoreBreakdown": {
+        "price": 17, "utilization": 18, "inventory": 15, "demand": 12,
+        "rationale": "漲幅溫和；82% 稼動率健康但 5 月恐降；庫存控管中；2026 出貨 YoY -0.6% 拖累需求項"
+      }
     },
     {
       "name": "PCB",
       "phase": "growth", "level": 68, "trend": "up", "signal": "YELLOW",
       "note": "AI 伺服器 PCB 出貨 YoY +82.8%，ABF 載板交期 >30 週，CCL 兩年漲近 100%。M9 材料 2026 導入帶動高階 PCB 再漲 30-50%。",
       "indicators": ["AI 伺服器 PCB 出貨 YoY +82.8%", "高階 ABF 載板交期 >30 週"],
-      "watchlist": {"tw": "欣興 (3037)", "us": "TTM Technologies (TTMI)"}
+      "watchlist": {"tw": "欣興 (3037)", "us": "TTM Technologies (TTMI)"},
+      "scoreBreakdown": {
+        "price": 18, "utilization": 18, "inventory": 15, "demand": 17,
+        "rationale": "CCL 兩年漲近 100%；AI 板滿載；ABF 交期 >30 週反映吃緊；AI 伺服器 +82.8% 強勁"
+      }
     },
     {
       "name": "車用晶片",
       "phase": "recovery", "level": 35, "trend": "up", "signal": "GREEN",
       "note": "MCU 交期從 52+ 週降至 20-24 週，庫存正常化。SiC 2026 產值預估 $53.3 億，EV 滲透率 ~27.5%。循環低檔復甦中，最佳佈局區。",
       "indicators": ["全球 EV 滲透率 ~27.5%", "車用 MCU 交期降至 20-24 週"],
-      "watchlist": {"tw": "富鼎 (8261)", "us": "onsemi (ON)"}
+      "watchlist": {"tw": "富鼎 (8261)", "us": "onsemi (ON)"},
+      "scoreBreakdown": {
+        "price": 8, "utilization": 10, "inventory": 10, "demand": 7,
+        "rationale": "價格底部盤整；IDM 仍在去化；交期 52→20-24 週去庫存後段；中國價格戰拖累需求"
+      }
     },
     {
       "name": "IC 設計",
       "phase": "growth", "level": 55, "trend": "up", "signal": "YELLOW",
       "note": "台灣 IC 設計從消費性轉向 AI 驅動，AI 晶片佔產值 15-20%。聯發科積極布局客製化 ASIC，但面臨美中競爭壓力，個股分化大。",
       "indicators": ["AI 晶片設計佔台灣 IC 設計產值 15-20%", "台灣 IC 設計全球排名面臨退至第三風險"],
-      "watchlist": {"tw": "聯發科 (2454)", "us": "Broadcom (AVGO)"}
+      "watchlist": {"tw": "聯發科 (2454)", "us": "Broadcom (AVGO)"},
+      "scoreBreakdown": {
+        "price": 13, "utilization": 15, "inventory": 14, "demand": 13,
+        "rationale": "AI ASIC 強消費 IC 平；訂單能見度中等；庫存基本正常化；分化嚴重"
+      }
     }
   ]
 }

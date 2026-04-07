@@ -613,6 +613,23 @@
       margin-top: 10px;
     }
 
+    .cycle-signal { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin-left:8px; font-weight:600; }
+    .cycle-signal-GREEN { background:#dff5df; color:#2d6a2d; }
+    .cycle-signal-YELLOW { background:#fff4d1; color:#8a6a00; }
+    .cycle-signal-ORANGE { background:#ffe4cc; color:#a04a00; }
+    .cycle-signal-RED { background:#ffd6d6; color:#9a2222; }
+    .cycle-watchlist { font-size:12px; color:var(--text-light); margin-top:6px; }
+    .cycle-watchlist b { color:var(--text-dark); }
+    .cycle-details { margin-top:10px; font-size:12px; }
+    .cycle-details summary { cursor:pointer; color:var(--text-light); padding:4px 0; user-select:none; }
+    .cycle-details summary:hover { color:var(--text-dark); }
+    .cycle-details[open] summary { color:var(--text-dark); font-weight:600; }
+    .cycle-details-body { padding:8px 12px; background:#f7f7f5; border-radius:6px; margin-top:6px; line-height:1.6; }
+    .cycle-score-row { display:flex; justify-content:space-between; padding:2px 0; }
+    .cycle-score-bar { display:inline-block; height:6px; background:#a8d4a8; border-radius:3px; vertical-align:middle; margin:0 6px; }
+    .cycle-methodology { margin:16px 0; padding:10px 14px; background:#fafafa; border:1px solid #eee; border-radius:6px; font-size:13px; }
+    .cycle-methodology summary { cursor:pointer; font-weight:600; color:#444; }
+    .cycle-methodology[open] { background:#f4f4f0; }
     .cycle-trend-up::before { content: '▲ '; color: var(--accent-green); font-size: 10px; }
     .cycle-trend-down::before { content: '▼ '; color: var(--accent-red); font-size: 10px; }
     .cycle-trend-flat::before { content: '— '; color: var(--text-light); font-size: 10px; }
@@ -1138,16 +1155,45 @@
       const container = document.getElementById('cycleCards');
       document.getElementById('cycleUpdated').textContent = `最近更新：${data.updatedAt}${data.source ? '　·　' + data.source : ''}`;
 
+      const escapeHtml = s => String(s == null ? '' : s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
       let html = '';
       data.cycles.forEach(c => {
         const p = phaseMap[c.phase] || phaseMap.growth;
         const trendClass = trendMap[c.trend] || '';
-        const indicatorsHtml = (c.indicators || []).map(i => `<span class="cycle-indicator">${i}</span>`).join('');
+        const indicatorsHtml = (c.indicators || []).map(i => `<span class="cycle-indicator">${escapeHtml(i)}</span>`).join('');
+        const signalHtml = c.signal ? `<span class="cycle-signal cycle-signal-${c.signal}">${escapeHtml(c.signal)}</span>` : '';
+        const watchlistHtml = c.watchlist ? `<div class="cycle-watchlist">關注標的｜<b>台股：</b>${escapeHtml(c.watchlist.tw || '-')}　<b>美股：</b>${escapeHtml(c.watchlist.us || '-')}</div>` : '';
+
+        let scoreHtml = '';
+        if (c.scoreBreakdown) {
+          const sb = c.scoreBreakdown;
+          const rows = [
+            ['價格動能', sb.price],
+            ['產能利用率', sb.utilization],
+            ['庫存水位', sb.inventory],
+            ['需求強度', sb.demand]
+          ].map(([label, val]) => {
+            const v = Number(val) || 0;
+            return `<div class="cycle-score-row"><span>${label}</span><span><span class="cycle-score-bar" style="width:${v*2}px"></span>${v}/25</span></div>`;
+          }).join('');
+          const total = (Number(sb.price)||0)+(Number(sb.utilization)||0)+(Number(sb.inventory)||0)+(Number(sb.demand)||0);
+          scoreHtml = `
+            <details class="cycle-details">
+              <summary>📊 評分明細（點擊展開）</summary>
+              <div class="cycle-details-body">
+                ${rows}
+                <div class="cycle-score-row" style="border-top:1px solid #ddd;margin-top:6px;padding-top:6px;font-weight:600;"><span>合計</span><span>${total}/100</span></div>
+                ${sb.rationale ? `<div style="margin-top:8px;color:#555;">${escapeHtml(sb.rationale)}</div>` : ''}
+              </div>
+            </details>
+          `;
+        }
 
         html += `
           <div class="cycle-card">
             <div class="cycle-card-top">
-              <span class="cycle-card-name">${c.name}</span>
+              <span class="cycle-card-name">${escapeHtml(c.name)}${signalHtml}</span>
               <span class="cycle-card-phase ${p.class}">${p.label}</span>
             </div>
             <div class="cycle-bar-container">
@@ -1164,10 +1210,32 @@
               <span>谷底</span><span>復甦</span><span>成長</span><span>高峰</span><span>衰退</span>
             </div>
             <div class="cycle-card-indicators">${indicatorsHtml}</div>
-            <div class="cycle-card-note ${trendClass}">${c.note}</div>
+            <div class="cycle-card-note ${trendClass}">${escapeHtml(c.note)}</div>
+            ${watchlistHtml}
+            ${scoreHtml}
           </div>
         `;
       });
+
+      // 底部方法論（可摺疊）
+      if (data.methodology) {
+        const m = data.methodology;
+        const dims = (m.dimensions || []).map(d => `<li><b>${escapeHtml(d.name)}</b>：${escapeHtml(d.desc)}</li>`).join('');
+        const lims = (m.limitations || []).map(l => `<li>${escapeHtml(l)}</li>`).join('');
+        html += `
+          <details class="cycle-methodology">
+            <summary>📐 評估依據與評分方法（點擊展開）</summary>
+            <div style="margin-top:10px;line-height:1.7;">
+              <p><b>評分框架</b>：${escapeHtml(m.framework || '')}</p>
+              <ul>${dims}</ul>
+              <p><b>Phase 對應</b>：${escapeHtml(m.phaseMapping || '')}</p>
+              <p><b>Signal 規則</b>：${escapeHtml(m.signalRule || '')}</p>
+              <p><b>方法論限制</b></p>
+              <ul>${lims}</ul>
+            </div>
+          </details>
+        `;
+      }
 
       container.innerHTML = html;
     }
