@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-04-13",
+  "updatedAt": "2026-04-20",
   "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報",
   "cycles": [
     {
       "name": "DRAM",
-      "phase": "peak",
-      "level": 88,
+      "phase": "growth",
+      "level": 72,
       "trend": "up",
-      "note": "AI 驅動 HBM 超級週期，Q2 合約價 QoQ 漲 58-63%，全球庫存僅 2-3 週為歷史低點，Goldman Sachs 預估 2026 年供給缺口達 4.9% 為 15 年最嚴重。",
-      "indicators": ["Q2 DRAM 合約價 QoQ +58~63%", "全球 DRAM 庫存僅 2-3 週"]
+      "note": "Q2 合約價預估 QoQ +58%~63%，DDR5 16GB 模組漲至約 $30。HBM 產能排擠傳統 DRAM 供給，供需缺口預計持續至 2027 年新產能開出。",
+      "indicators": ["Q2 合約價 QoQ +58%~63%", "DDR5 16GB 模組價格約 $30（vs. 2025/9 低於 $10）"]
     },
     {
       "name": "NAND Flash",
-      "phase": "peak",
-      "level": 85,
+      "phase": "growth",
+      "level": 75,
       "trend": "up",
-      "note": "Q2 合約價 QoQ 漲 70-75%，企業級 SSD 需求強勁，部分廠商庫存預計 Q1 即耗盡，新產能最快 2027 下半年才上線。",
-      "indicators": ["Q2 NAND 合約價 QoQ +70~75%", "廠商庫存預計 Q1-Q2 耗盡"]
+      "note": "Q1 合約價 QoQ +55%~60% 創單季漲幅新高，企業級 SSD QoQ +53%~58%。Samsung/SK Hynix 削減 NAND 投片轉 HBM，2026 全年產能已售罄，庫存僅夠撐到 Q1 末。",
+      "indicators": ["Q1 NAND 合約價 QoQ +55%~60%", "Samsung 2026 wafer 投片降至 470 萬片（YoY -4%）"]
     },
     {
       "name": "晶圓代工",
       "phase": "growth",
-      "level": 72,
+      "level": 68,
       "trend": "up",
-      "note": "TSMC Q1 營收 357 億美元 YoY +35%，N3 稼動率超過 120%，先進製程供不應求；但成熟製程面臨價格壓力，UMC 等廠 2026 年降價 15%。",
-      "indicators": ["TSMC N3 稼動率 >120%", "成熟製程稼動率約 60-70%"]
+      "note": "台積電先進製程（3nm/5nm）2026H1 產能利用率近 100%，Q1 營收年增 38%，資本支出上調至 $560 億。成熟製程（聯電/力積電）Q1 稼動率約 mid-70%，4 月起醞釀漲價 5%~10%。",
+      "indicators": ["台積電 3nm/5nm 稼動率 ~100%", "聯電成熟製程稼動率 mid-70%，4月漲價 5%~10%"]
     },
     {
       "name": "被動元件",
       "phase": "recovery",
-      "level": 45,
+      "level": 38,
       "trend": "up",
-      "note": "市場高度分化：AI 伺服器用高階 MLCC 需求強勁，日韓廠稼動率超過 80%；但消費性電子與車用市場疲弱，台灣/中國廠稼動率僅 60-70%，庫存 60-75 天。",
-      "indicators": ["日韓高階 MLCC 稼動率 >80%", "台/中廠庫存 60-75 天"]
+      "note": "AI 伺服器用高規 MLCC 需求強勁（單台用量達 30,000 顆），但消費電子與手機需求疲軟。台系/中系廠稼動率約 60%~70%，庫存天數維持 60~75 天，整體呈分化格局。",
+      "indicators": ["台系/中系 MLCC 稼動率 60%~70%", "庫存天數 60~75 天"]
     },
     {
       "name": "面板",
       "phase": "recovery",
       "level": 35,
-      "trend": "flat",
-      "note": "Q1 LCD TV 面板稼動率降至 87.7%（QoQ -3.5pp），中國面板廠春節減產維持價格穩定；IT 面板受記憶體漲價衝擊，NB 面板需求偏弱，價格持平至小幅下滑。",
-      "indicators": ["Q1 LCD TV 稼動率 87.7%", "IT 面板價格持平至 -$0.1~0.2"]
+      "trend": "up",
+      "note": "Q1 TV 面板價格小幅回升 MoM +$1~2，中國面板廠春節期間主動降載，稼動率降至 ~87.7%（QoQ -3.5pp）以穩定價格。記憶體漲價衝擊手機面板出貨，2026 年預估 YoY -7.3%。",
+      "indicators": ["Q1 LCD TV 面板稼動率 ~87.7%（QoQ -3.5pp）", "2026 手機面板出貨預估 YoY -7.3%"]
     },
     {
       "name": "PCB",
       "phase": "growth",
       "level": 65,
       "trend": "up",
-      "note": "2026 全球 PCB 產值預估 1052 億美元 YoY +13.9%，AI 伺服器 PCB 佔比從 15% 躍升至 25%，ABF 載板供給吃緊；銅箔基板等關鍵材料供給缺口持續。",
-      "indicators": ["全球 PCB 產值 YoY +13.9%", "AI 伺服器 PCB 佔比達 25%"]
+      "note": "AI 伺服器出貨 YoY +68% 帶動 HDI/ABF 載板需求，高階 ABF 載板交期仍超過 30 週。銅價創新高 $13,300/噸，CCL 累計漲幅 45%，NVIDIA Rubin 平台 M10 新材料 2026 開始驗證。",
+      "indicators": ["CCL 累計漲幅 ~45%，交期延至 6 個月", "AI 伺服器 PCB 用量帶動高階 ABF 載板交期 >30 週"]
     },
     {
       "name": "車用晶片",
       "phase": "recovery",
       "level": 40,
       "trend": "up",
-      "note": "供需趨於平衡，MCU 交期從 52 週以上降至 20-24 週，庫存回歸常態；SiC 功率元件成長約 38% CAGR，全球 EV 滲透率預估超過 20%。",
-      "indicators": ["MCU 交期降至 20-24 週", "全球 EV 滲透率 >20%"]
+      "note": "全球 EV 滲透率約 27.5%（中國 42%），SiC 功率元件需求持續攀升，2023-2035 SiC MOSFET 需求預估成長 10 倍。MCU 庫存逐步正常化，歐洲新 SiC 晶圓廠 2026 年投產增加在地供給。",
+      "indicators": ["全球 EV 滲透率 ~27.5%（中國 42%）", "SiC MOSFET 2023-2035 需求預估成長 10x"]
     },
     {
       "name": "IC 設計",
-      "phase": "growth",
-      "level": 62,
-      "trend": "up",
-      "note": "AI ASIC 設計案量爆發，聯發科預估 2026 年 ASIC 營收突破 10 億美元；手機 AP 受記憶體漲價與 BOM 成本上升壓力，2026 出貨可能承壓；聯發科與高通均導入台積電 N2 製程。",
-      "indicators": ["聯發科 ASIC 營收目標 >$1B", "手機 AP 導入 TSMC N2 製程"]
+      "phase": "decline",
+      "level": 45,
+      "trend": "down",
+      "note": "聯發科/高通 4nm 投片量 YoY -15%，記憶體漲價壓縮手機整機利潤，2026 全球手機出貨預估 YoY -10% 至約 11.35 億支。AI ASIC 設計案表現分化，台灣 IC 設計業面臨中美競爭壓力，全球排名恐降至第三。",
+      "indicators": ["聯發科/高通 4nm 投片量 YoY -15%", "2026 全球手機出貨預估 YoY -10%（~11.35 億支）"]
     }
   ]
 }
