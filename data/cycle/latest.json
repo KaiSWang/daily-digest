@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-04-27",
-  "source": "綜合 TrendForce、DIGITIMES、TechNews、Tom's Hardware、Electrek、IEA、各廠財報與法說會",
+  "updatedAt": "2026-04-28",
+  "source": "綜合 TrendForce、DIGITIMES、IC Insights、Tom's Hardware、Bloomberg、各廠財報",
   "cycles": [
     {
       "name": "DRAM",
-      "phase": "growth",
-      "level": 72,
+      "phase": "peak",
+      "level": 82,
       "trend": "up",
-      "note": "Q2 合約價預估 QoQ +63%，供給持續吃緊，庫存僅 2-4 週。HBM 與 DDR5 產能滿載，DDR5 獲利預估將超越 HBM3e。",
-      "indicators": ["Q2 DRAM 合約價 QoQ +63%", "原廠庫存降至 2-4 週（年減 66%）"]
+      "note": "TrendForce 預測 Q2 2026 合約價 QoQ +58~63%，Samsung 已對 Q2 客戶調漲約 30%；HBM3E 2026 年報價再漲 20%，三大廠產能幾乎全數售予 AI 資料中心，全球庫存僅剩 2-3 週，為歷史低點。",
+      "indicators": ["Q2 合約價 QoQ +58~63%（TrendForce）", "全球庫存天數 14~21 天（歷史低點）"]
     },
     {
       "name": "NAND Flash",
-      "phase": "growth",
-      "level": 70,
+      "phase": "peak",
+      "level": 80,
       "trend": "up",
-      "note": "Q2 合約價預估 QoQ +70~75%，企業級 SSD 因 AI 基建爆發優先配產，消費級被壓縮。原廠庫存僅撐至 Q1 末。",
-      "indicators": ["Q2 NAND 合約價 QoQ +70~75%", "企業級 SSD 產能排擠消費級供給"]
+      "note": "Q2 2026 NAND Flash 合約價 QoQ +70~75%，漲幅首度超越 DRAM；原廠全面將產能轉移至企業級 SSD（AI 伺服器），客戶端 SSD 供給受壓縮，庫存天數降至 21-28 天。",
+      "indicators": ["Q2 合約價 QoQ +70~75%（TrendForce）", "全球庫存天數 21~28 天（近歷史低點）"]
     },
     {
       "name": "晶圓代工",
       "phase": "growth",
       "level": 68,
       "trend": "up",
-      "note": "台積電 5/4nm 滿載至年底，聯電 H2 漲價 8-10%。8 吋稼動率升至 85-90%，全球產值估年增 23.5% 達 2500 億美元。",
-      "indicators": ["8 吋晶圓稼動率 85-90%", "聯電 H2 漲價 8-10%"]
+      "note": "台積電先進製程（7nm 以下）貢獻 Q2 2025 晶圓營收 74%，AI/HPC 訂單能見度高；但成熟製程（UMC、SMIC 等）稼動率降至 60~70%，呈現明顯兩極分化，整體評分依台積電主導加權。",
+      "indicators": ["台積電先進製程佔晶圓營收比重 74%", "成熟製程廠稼動率 60~70%（YoY 受壓）"]
     },
     {
       "name": "被動元件",
-      "phase": "recovery",
-      "level": 45,
+      "phase": "growth",
+      "level": 62,
       "trend": "up",
-      "note": "AI 伺服器 MLCC 需求爆發（單機櫃 44 萬顆），村田稼動率 90-95%，但台系廠僅 60-70%，高低階兩極化。",
-      "indicators": ["村田稼動率 90-95%；台系廠 60-70%", "AI 伺服器 MLCC 單機櫃 44 萬顆"]
+      "note": "AI 伺服器高規 MLCC 需求爆發（每台 GB300 系列需 2~3 萬顆），日系廠（村田/太陽誘電/SEMCO）稼動率升破 80%；台系與中系廠消費性產品稼動率仍在 60~70%，整體呈高低雙軌格局，高端缺貨、消費端仍軟。",
+      "indicators": ["日系 MLCC 廠稼動率 >80%（AI 伺服器/車用拉動）", "台中系廠稼動率 60~70%（消費性疲弱）"]
     },
     {
       "name": "面板",
       "phase": "recovery",
-      "level": 40,
+      "level": 58,
       "trend": "up",
-      "note": "TV 面板連月上漲，65/75 吋 4 月續漲。Q1 LCD TV 稼動率 87.7%（QoQ -3.5pp），面板廠控產穩價。",
-      "indicators": ["Q1 LCD TV 稼動率 87.7%", "65/75 吋 TV 面板 4 月續漲"]
+      "note": "中國三大面板廠（BOE/CSOT/HKC）春節期間實施 5~10 天減產，TV 面板價格自 2 月起持續月增；Q1 2026 LCD TV 面板稼動率約 87.7%（QoQ -3.5pp，仍屬高位），BOE 預告漲勢可望延續至 Q2。",
+      "indicators": ["Q1 2026 LCD TV 稼動率 87.7%（QoQ -3.5pp）", "TV 面板價格連續月增，BOE 預告 Q2 持續看漲"]
     },
     {
       "name": "PCB",
       "phase": "growth",
-      "level": 65,
+      "level": 72,
       "trend": "up",
-      "note": "AI 伺服器帶動高階 PCB 需求爆發，4 月 CCL/PCB 價格季增 10-40%，ABF 載板訂單能見度達 2027 年。",
-      "indicators": ["4 月 CCL/PCB 價格 QoQ +10~40%", "ABF 載板訂單能見度至 2027 年"]
+      "note": "AI 伺服器 PCB 市場 2026 年目標達 RMB 900 億（YoY 約 +125%），NVIDIA 已於 2026 年 3 月啟動 M10 新型 CCL 材料供應商測試；ABF 載板交期持續超過 30 週，Unimicron、Ibiden 具強議價能力，銅箔基板原物料成本持續攀升。",
+      "indicators": ["AI 伺服器 PCB 市場 2026 年 RMB 900 億（YoY +125%）", "ABF 載板交期 >30 週，結構性供給瓶頸持續"]
     },
     {
       "name": "車用晶片",
       "phase": "recovery",
-      "level": 35,
+      "level": 40,
       "trend": "up",
-      "note": "SiC 庫存逐漸消化，EV 滲透率 2026 年估 27.5%。SiC 市場估 41-46 億美元，MCU 仍處庫存調整尾聲。",
-      "indicators": ["2026 全球 EV 滲透率估 27.5%", "SiC 功率市場 2026 估 41-46 億美元"]
+      "note": "SiC 功率元件受 EV 持續滲透驅動，2026 年市場規模達 USD 53.3 億（CAGR 38%），ST/Infineon 均在擴產；傳統汽車 MCU 已從 2023-2024 年庫存超量低谷緩步復甦，Renesas 推出 28nm RH850/U2C 新平台，NXP 市佔率逾 20% 維持領先。",
+      "indicators": ["SiC 功率元件市場 2026 年 USD 53.3 億（CAGR 38%）", "汽車 MCU 市場 2026 年 USD 123.4 億（YoY +8.2%，庫存後復甦）"]
     },
     {
       "name": "IC 設計",
       "phase": "growth",
-      "level": 58,
+      "level": 68,
       "trend": "up",
-      "note": "AI ASIC 為核心動能，聯發科 2026 ASIC 營收估破 10 億美元。手機 AP 因記憶體漲價需求轉保守，消費性 IC 復甦偏弱。",
-      "indicators": ["聯發科 2026 ASIC 營收估破 10 億美元", "手機 AP 因記憶體漲價需求轉保守"]
+      "note": "AI ASIC 設計案量持續放量，2026 年全球市場規模達 USD 242 億；OpenAI 擴大多雲合作（AWS/Google）進一步帶動客製化 ASIC 需求，手機 AP 進入 AI NPU 算力競賽週期，消費性 IC 庫存已從 2022-2023 年高峰回歸健康水位。",
+      "indicators": ["全球 AI ASIC 市場 2026 年 USD 242 億（至 2034 年 CAGR 17%）", "手機 AP NPU 算力競賽帶動 3nm 設計案密度提升"]
     }
   ]
 }
