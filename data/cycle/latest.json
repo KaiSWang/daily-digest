@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-05-25",
-  "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報、IEA、S&P Global、Deloitte",
+  "updatedAt": "2026-06-01",
+  "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報與法說會",
   "cycles": [
     {
       "name": "DRAM",
-      "phase": "peak",
-      "level": 85,
+      "phase": "growth",
+      "level": 75,
       "trend": "up",
-      "note": "AI驅動記憶體超級循環持續，HBM產能滿載帶動傳統DRAM供給緊縮，DDR5合約價已突破$19.50/顆（YoY翻倍），庫存從12週降至2-4週，Bank of America定義2026為「1990年代級超級循環」。",
-      "indicators": ["DRAM合約價QoQ +30%（Q4 2025）再+20%（Q1 2026）", "產業庫存天數由12週降至2-4週"]
+      "note": "Q2 合約價 QoQ 漲 58-63%，AI 伺服器用高容量 RDIMM 為主要採購標的；DDR5 獲利預期超越 HBM3e，產能持續向 DDR5 傾斜，供給偏緊格局延續至 H2。",
+      "indicators": ["Q2 conventional DRAM 合約價 QoQ +58~63%", "DDR5 與 HBM3e 價差從 4-5x 收斂至 1-2x"]
     },
     {
       "name": "NAND Flash",
       "phase": "growth",
-      "level": 75,
+      "level": 72,
       "trend": "up",
-      "note": "企業級SSD成最大NAND應用類別，Q1 2026合約價QoQ+33-38%、Q2再漲70-75%創紀錄。供給成長15-17%落後需求成長20-22%，部分廠商庫存預計Q1即耗盡，消費級1TB SSD價格已從$45翻倍至$90。",
-      "indicators": ["企業級SSD合約價QoQ +53-58%（Q1 2026）", "NAND供給YoY +15-17% vs 需求YoY +20-22%"]
+      "note": "1Tb TLC 價格半年內從 $4.80 漲至 $10.70（+123%）；企業級 SSD 成為最大應用段，需求 YoY +20-22% 但供給僅 +15-17%，供需缺口持續擴大至 H2。",
+      "indicators": ["1Tb TLC NAND 半年漲幅 +123%", "2026 需求 YoY +20-22% vs 供給 +15-17%"]
     },
     {
       "name": "晶圓代工",
       "phase": "growth",
-      "level": 65,
+      "level": 73,
       "trend": "up",
-      "note": "台積電市占70.4%穩居龍頭，3nm受惠iPhone 17推升ASP；聯電Q1產能利用率79%，已發出下半年漲價通知（漲幅8-10%、7月生效）。台積電縮減成熟製程產能，轉單效應利好聯電、世界先進。整體產業預估2026年成長21-23%。",
-      "indicators": ["聯電產能利用率79%（Q1 2026）", "聯電下半年漲價8-10%"]
+      "note": "台積電 Q1 營收 NT$1.13 兆創新高，毛利率 66.2%，先進製程（7nm 以下）佔營收 74%，HPC 佔比推升至 61%；聯電 Q1 稼動率 79%、Q2 展望 low-80s；成熟製程因中國擴產面臨 H2 稼動率下滑至 60% 風險。",
+      "indicators": ["台積電 Q1 毛利率 66.2%、先進製程佔比 74%", "聯電 Q2 稼動率展望 low-80%"]
     },
     {
       "name": "被動元件",
-      "phase": "growth",
-      "level": 70,
+      "phase": "recovery",
+      "level": 50,
       "trend": "up",
-      "note": "AI伺服器單機櫃MLCC用量從2,200顆暴增至45萬顆，村田接單出貨比1.26創五年新高、稼動率90-95%接近滿載。三星電機已調漲MLCC價格20-30%（6月生效），日系廠主動收縮中低階產出，供給缺口利好台系廠商。",
-      "indicators": ["村田接單出貨比1.26（CY Q1 2026，五年新高）", "三星電機MLCC漲價20-30%（2026年6月生效）"]
+      "note": "AI 伺服器用高容量 MLCC 需求強勁，車規 MLCC 交期延長至 26 週；Murata 評估漲價，太陽誘電 4 月調漲低容消費/車用 MLCC 6-13%；但一般消費性需求仍溫和，市場呈結構性分化。",
+      "indicators": ["車規 MLCC 交期延長至 26 週", "太陽誘電 4 月漲價 6-13%"]
     },
     {
       "name": "面板",
       "phase": "recovery",
-      "level": 35,
-      "trend": "flat",
-      "note": "2026年5月TV面板全尺寸持平（65吋$177、55吋$126），監視器面板微漲$0.1-0.3。品牌端修正訂單、需求轉弱，面板廠以假期調節產能維持「按需生產」策略。Q1中國LCD TV稼動率約87.7%（QoQ -3.5ppt）。",
-      "indicators": ["TV面板5月全尺寸報價持平", "中國LCD TV面板稼動率87.7%（Q1 2026）"]
+      "level": 38,
+      "trend": "up",
+      "note": "TV 面板價格自 Q1 起逐月上漲 $1-2/片，Q2 漲勢延續；中國面板廠稼動率維持 80-90%；但智慧型手機面板出貨預估 YoY -7.3%，筆電面板價格仍在下滑，IT 需求偏弱。",
+      "indicators": ["TV 面板 Q1-Q2 每月漲 $1-2/片", "手機面板出貨預估 YoY -7.3%"]
     },
     {
       "name": "PCB",
       "phase": "growth",
-      "level": 72,
+      "level": 70,
       "trend": "up",
-      "note": "AI伺服器PCB市場規模2026年預計翻倍至RMB 900億+，NVIDIA新平台採24層HDI板、單機架PCB價值達RMB 41萬。ABF載板交期超過30週呈結構性短缺，全球CCL市場預估YoY +34.2%至$21.5B。",
-      "indicators": ["AI伺服器PCB市場規模YoY翻倍", "全球CCL市場YoY +34.2%至$21.5B"]
+      "note": "全球 PCB 市場 2026 預估 $957 億、YoY +12.5%；AI 伺服器用 GPU/ASIC 板市場規模翻倍至 RMB 900 億+；高階 CCL 漲價 20-40%，ABF 載板供給趨緊，交期從 8-10 週延長至 16-20 週，新產能最快 H2 才上線。",
+      "indicators": ["高階 CCL 漲幅 20-40%", "ABF/BT 載板交期延長至 16-20 週"]
     },
     {
       "name": "車用晶片",
-      "phase": "growth",
-      "level": 55,
+      "phase": "recovery",
+      "level": 42,
       "trend": "up",
-      "note": "全球EV滲透率2026年預估達25-30%，BEV單車MCU需求量為燃油車4倍（300+顆 vs 70顆）。車規SiC MOSFET交期超過52週、主要廠商產能滿載。車用半導體市場預計2030年達$132B（CAGR遠超整車2%）。MCU過剩庫存已消化完畢，AI邊緣應用推升新需求。",
-      "indicators": ["車規SiC MOSFET交期>52週", "全球EV滲透率25-30%（2026年）"]
+      "note": "車用 MCU 庫存去化完成，進入補庫存階段；Infineon/NXP/Renesas 自 4-7 月陸續啟動漲價；SiC MOSFET 交期仍達 52 週以上；全球 EV 滲透率 2025 達 25%，2026 預估年增 15.2%，成長動能略有收斂。",
+      "indicators": ["車用 SiC MOSFET 交期 52+ 週", "全球 EV 滲透率 ~25-30%，YoY +15.2%"]
     },
     {
       "name": "IC 設計",
       "phase": "growth",
-      "level": 68,
+      "level": 65,
       "trend": "up",
-      "note": "2025年全球前十大IC設計廠營收YoY+44%至$359.4B，NVIDIA以$205.7B（+65%）穩居龍頭。2026年焦點轉向ASIC+推論市場，Broadcom、Marvell等客製化AI晶片需求強勁。手機AP成長相對溫和（Qualcomm YoY+11%），消費性IC復甦但不及AI爆發力。",
-      "indicators": ["前十大Fabless營收YoY +44%（2025）", "全球半導體產業2026年預估達$975B（+26%）"]
+      "note": "AI ASIC 爆發，聯發科上修全年 ASIC 營收目標至 $20 億、拿下 Google TPU 合作；全球前十大 IC 設計 2025 營收合計 $3,594 億（YoY +44%）；但手機 AP 承壓，聯發科預估 2026 手機出貨 YoY -15%，消費性 IC 需求轉弱。",
+      "indicators": ["聯發科 2026 AI ASIC 營收目標 $20 億", "全球手機出貨預估 YoY -15%"]
     }
   ]
 }
