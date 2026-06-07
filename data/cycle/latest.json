@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-06-01",
-  "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報與法說會",
+  "updatedAt": "2026-06-08",
+  "source": "綜合 TrendForce、DIGITIMES、Counterpoint、各廠法說會與財報",
   "cycles": [
     {
       "name": "DRAM",
       "phase": "growth",
-      "level": 75,
+      "level": 78,
       "trend": "up",
-      "note": "Q2 合約價 QoQ 漲 58-63%，AI 伺服器用高容量 RDIMM 為主要採購標的；DDR5 獲利預期超越 HBM3e，產能持續向 DDR5 傾斜，供給偏緊格局延續至 H2。",
-      "indicators": ["Q2 conventional DRAM 合約價 QoQ +58~63%", "DDR5 與 HBM3e 價差從 4-5x 收斂至 1-2x"]
+      "note": "AI 伺服器帶動 HBM/DDR5 需求強勁，Q2 合約價 QoQ +58~63%，CSP 以長約鎖定供應，DDR5 獲利預估超越 HBM3e。",
+      "indicators": ["Q2 合約價 QoQ +58~63%", "DDR5 獲利率 2026 年超越 HBM3e"]
     },
     {
       "name": "NAND Flash",
       "phase": "growth",
-      "level": 72,
+      "level": 76,
       "trend": "up",
-      "note": "1Tb TLC 價格半年內從 $4.80 漲至 $10.70（+123%）；企業級 SSD 成為最大應用段，需求 YoY +20-22% 但供給僅 +15-17%，供需缺口持續擴大至 H2。",
-      "indicators": ["1Tb TLC NAND 半年漲幅 +123%", "2026 需求 YoY +20-22% vs 供給 +15-17%"]
+      "note": "企業級 SSD 成為最大應用，Q2 合約價 QoQ +70~75%，庫存預計 Q2 見底，產能擴充最快 2027 末才到位。",
+      "indicators": ["Q2 合約價 QoQ +70~75%", "Kingston 報告 NAND wafer 成本 +246%"]
     },
     {
       "name": "晶圓代工",
-      "phase": "growth",
-      "level": 73,
+      "phase": "peak",
+      "level": 82,
       "trend": "up",
-      "note": "台積電 Q1 營收 NT$1.13 兆創新高，毛利率 66.2%，先進製程（7nm 以下）佔營收 74%，HPC 佔比推升至 61%；聯電 Q1 稼動率 79%、Q2 展望 low-80s；成熟製程因中國擴產面臨 H2 稼動率下滑至 60% 風險。",
-      "indicators": ["台積電 Q1 毛利率 66.2%、先進製程佔比 74%", "聯電 Q2 稼動率展望 low-80%"]
+      "note": "台積電 Q1 營收創新高 NT$1.13 兆、毛利率 66.2%，先進製程（<7nm）佔營收 74%，HPC 佔比達 61% 歷史新高，2nm 預計年底貢獻營收。",
+      "indicators": ["台積電 Q1 毛利率 66.2%", "8 吋成熟製程稼動率逼近 90%"]
     },
     {
       "name": "被動元件",
       "phase": "recovery",
-      "level": 50,
+      "level": 55,
       "trend": "up",
-      "note": "AI 伺服器用高容量 MLCC 需求強勁，車規 MLCC 交期延長至 26 週；Murata 評估漲價，太陽誘電 4 月調漲低容消費/車用 MLCC 6-13%；但一般消費性需求仍溫和，市場呈結構性分化。",
-      "indicators": ["車規 MLCC 交期延長至 26 週", "太陽誘電 4 月漲價 6-13%"]
+      "note": "市場明顯分化：日韓廠高階 MLCC 稼動率 >90%（AI 伺服器單機需求達 44 萬顆），台系/中系一般品稼動率僅 60~70%、庫存 60-75 天。",
+      "indicators": ["高階 MLCC 稼動率 >90%", "台系一般品稼動率 60~70%"]
     },
     {
       "name": "面板",
       "phase": "recovery",
       "level": 38,
       "trend": "up",
-      "note": "TV 面板價格自 Q1 起逐月上漲 $1-2/片，Q2 漲勢延續；中國面板廠稼動率維持 80-90%；但智慧型手機面板出貨預估 YoY -7.3%，筆電面板價格仍在下滑，IT 需求偏弱。",
-      "indicators": ["TV 面板 Q1-Q2 每月漲 $1-2/片", "手機面板出貨預估 YoY -7.3%"]
+      "note": "Q1 面板廠以歲修控產支撐價格，TV 面板價格自 Q1 起進入上行週期，但需求端仍偏弱，稼動率若推升至 80% 以上恐再壓回價格。",
+      "indicators": ["Q1 稼動率主動降至 80% 以下控產", "TV 面板 Q1 起漲 US$2-3/片(65吋)"]
     },
     {
       "name": "PCB",
       "phase": "growth",
-      "level": 70,
+      "level": 72,
       "trend": "up",
-      "note": "全球 PCB 市場 2026 預估 $957 億、YoY +12.5%；AI 伺服器用 GPU/ASIC 板市場規模翻倍至 RMB 900 億+；高階 CCL 漲價 20-40%，ABF 載板供給趨緊，交期從 8-10 週延長至 16-20 週，新產能最快 H2 才上線。",
-      "indicators": ["高階 CCL 漲幅 20-40%", "ABF/BT 載板交期延長至 16-20 週"]
+      "note": "AI 伺服器推升 ABF 載板量價齊揚，外資預估 2026 年供給缺口 8%、2028 年擴大至 35%，欣興產能年增 35~40%，CCL 市場年增 34%。",
+      "indicators": ["ABF 載板 2026 供給缺口 8%", "全球 CCL 市場 YoY +34.2%"]
     },
     {
       "name": "車用晶片",
       "phase": "recovery",
-      "level": 42,
+      "level": 50,
       "trend": "up",
-      "note": "車用 MCU 庫存去化完成，進入補庫存階段；Infineon/NXP/Renesas 自 4-7 月陸續啟動漲價；SiC MOSFET 交期仍達 52 週以上；全球 EV 滲透率 2025 達 25%，2026 預估年增 15.2%，成長動能略有收斂。",
-      "indicators": ["車用 SiC MOSFET 交期 52+ 週", "全球 EV 滲透率 ~25-30%，YoY +15.2%"]
+      "note": "SiC 功率元件市場預估達 $53.3 億，EV 應用佔 $39.8 億；陸系 MCU 年初漲 15~50% 帶動台系轉單，車用半導體 CAGR 16.5%。",
+      "indicators": ["2026 SiC 市場規模 US$53.3 億", "陸系 MCU 漲價 15~50%"]
     },
     {
       "name": "IC 設計",
       "phase": "growth",
       "level": 65,
       "trend": "up",
-      "note": "AI ASIC 爆發，聯發科上修全年 ASIC 營收目標至 $20 億、拿下 Google TPU 合作；全球前十大 IC 設計 2025 營收合計 $3,594 億（YoY +44%）；但手機 AP 承壓，聯發科預估 2026 手機出貨 YoY -15%，消費性 IC 需求轉弱。",
-      "indicators": ["聯發科 2026 AI ASIC 營收目標 $20 億", "全球手機出貨預估 YoY -15%"]
+      "note": "AI ASIC 爆發——聯發科上修 2026 年 ASIC 營收翻倍突破 $20 億，但消費性轉弱（智慧型手機出貨預估 YoY -15%），產業呈 AI 強/消費弱的分化格局。",
+      "indicators": ["聯發科 AI ASIC 營收展望 >US$20 億", "全球智慧型手機出貨 YoY -15%"]
     }
   ]
 }
