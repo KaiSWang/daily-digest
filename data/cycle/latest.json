@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-08-10",
-  "source": "綜合 TrendForce、DIGITIMES、Counterpoint、S&P Global、AtlasPCB、各廠財報",
+  "updatedAt": "2026-08-24",
+  "source": "綜合 TrendForce、DIGITIMES、BloombergNEF、IEA、各廠財報與法說會",
   "cycles": [
     {
       "name": "DRAM",
       "phase": "growth",
       "level": 75,
       "trend": "up",
-      "note": "Q1 合約價飆漲 93-98% QoQ，產業營收季增 81% 達 $97B；Q3 漲幅趨緩至 13-18% QoQ，消費端觸及負擔上限，但 AI/HBM 需求持續支撐。三大廠 HBM 產能基本售罄至年底，DDR5 獲利已超越 HBM3e。",
-      "indicators": ["Q3 合約價 QoQ +13~18%", "Q1 產業營收 $97B（QoQ +81%）"]
+      "note": "Q3 合約價續漲 13-18% QoQ（TrendForce），Samsung 目標再漲 20%、SK Hynix 取消長約價格上限；HBM 產能排擠通用型 DRAM 供給，消費端已達成本承受極限，漲幅開始收斂。",
+      "indicators": ["Q3 server DRAM 合約價 QoQ +13~18%", "TSMC/SK Hynix HBM 產能滿載、DDR5 交期延長"]
     },
     {
       "name": "NAND Flash",
       "phase": "growth",
-      "level": 55,
-      "trend": "flat",
-      "note": "Q3 合約價趨平（0~-5% QoQ），高價抑制消費端需求，7 月 wafer 市場交易量極低；企業級 SSD 訂單穩定，QLC 出貨 YoY +40%，供給充足但價格動能減弱。",
-      "indicators": ["Q3 合約價 QoQ 0~-5%", "QLC SSD 出貨 YoY +40%"]
+      "level": 68,
+      "trend": "up",
+      "note": "Q3 合約價預估 QoQ +10-15%，漲幅較前幾季明顯收斂；企業級 SSD 交期 8-14 週為半導體最短品類，但消費端因價格已達歷史高點而採保守策略，呈現高價低量盤整格局。",
+      "indicators": ["Q3 NAND 合約價 QoQ +10~15%", "Enterprise SSD 交期 8-14 週"]
     },
     {
       "name": "晶圓代工",
       "phase": "growth",
-      "level": 78,
+      "level": 80,
       "trend": "up",
-      "note": "台積電 Q2 營收 $40.2B、毛利率 67.7%，Q3 展望 $44.6-45.8B（QoQ +12%、YoY +37%）；先進製程佔營收 77%，2nm 供不應求。聯電 Q2 稼動率 85%，Q3 展望超過 90%。全年營收成長上修至 >40%。",
-      "indicators": ["台積電 Q3 營收展望 $44.6-45.8B（YoY +37%）", "聯電 Q3 稼動率展望 >90%"]
+      "note": "TSMC N3/N5 產能利用率近 100% 全數售罄，3nm 月產能上修至 18 萬片；CoWoS 滿載、2nm 已預訂完畢。UMC Q2 稼動率回升至 85%、毛利率 32.5%；SMIC 國內稼動率逾 95%。先進製程極度吃緊，成熟製程觸底回升。",
+      "indicators": ["TSMC N3/N5 稼動率 ~100%", "UMC Q2 稼動率 85%、SMIC >95%"]
     },
     {
       "name": "被動元件",
       "phase": "growth",
       "level": 65,
       "trend": "up",
-      "note": "K 型復甦明顯：高容值車用/AI 伺服器 MLCC 吃緊，前五大廠稼動率 90-95%；單台 AI 伺服器需 2 萬~44 萬顆 MLCC，已成 BOM 第三大項。一般規格品供需接近平衡。",
-      "indicators": ["前五大 MLCC 廠稼動率 90-95%", "AI 伺服器單機 MLCC 用量 2萬~44萬顆"]
+      "note": "村田/三星電機/國巨 Q3 漲價 10-20%；日系稼動率 85-90%，高階產線逼近 95%。通路庫存降至 4.2-5.8 個月（健康），車規/AI 終端庫存僅 0.8-1.0 個月，交期延至 20 週，現貨溢價達 25%。",
+      "indicators": ["Q3 MLCC 漲幅 10-20%", "車規/AI 終端庫存僅 0.8-1.0 個月"]
     },
     {
       "name": "面板",
       "phase": "decline",
-      "level": 28,
-      "trend": "flat",
-      "note": "8 月 TV 面板報價跌幅收斂（65 吋 -$1 至 $173），IT 面板持平；稼動率約 80-85%。品牌端年底備貨需求漸回溫，但整體仍處景氣低檔。友達、群創加速轉型非顯示業務（玻璃基板封裝、車用）。",
-      "indicators": ["8月 65吋 TV 面板 $173（MoM -0.6%）", "產業稼動率約 80-85%"]
+      "level": 35,
+      "trend": "down",
+      "note": "Q3 為傳統旺季但面板廠採「以價換量」策略，TV 面板 7-8 月全面轉跌（每尺寸約跌 $1），8 月跌幅收斂中；IT 面板持平。面板廠稼動率維持 80-85% 控產，群創/友達加速轉型 AI 先進封裝。",
+      "indicators": ["8 月 TV 面板價格 MoM 約 -$1（跌幅收斂）", "產業稼動率約 80-85%（控產中）"]
     },
     {
       "name": "PCB",
       "phase": "growth",
-      "level": 76,
+      "level": 75,
       "trend": "up",
-      "note": "AI 伺服器帶動高階 HDI/ABF 載板強勁需求；7 月 CCL 成本飆漲 70%，味之素 ABF 膜 Q3 漲價 30%，T-glass 玻纖布持續吃緊。供需缺口預計延續至 2027。手機板因終端需求疲軟而偏弱。",
-      "indicators": ["7月 CCL 成本 MoM +70%", "ABF 膜 Q3 漲價 30%"]
+      "note": "AI 伺服器驅動 PCB 材料成本 YoY 飆漲逾 70%；韓國 CCL 進口價突破 $20,728/噸（YoY +74.5%），創 2000 年以來新高。ABF 載板因 HBM 需求供應吃緊，高層 HDI 為 AI ASIC 伺服器關鍵瓶頸。",
+      "indicators": ["PCB 材料成本 YoY +70%", "CCL 進口價 $20,728/噸（YoY +74.5%）"]
     },
     {
       "name": "車用晶片",
       "phase": "growth",
-      "level": 68,
+      "level": 62,
       "trend": "up",
-      "note": "全球 EV 滲透率突破 20%，單車半導體含量 $800-1,200。SiC MOSFET 交期超過 52 週，現貨溢價 40-80%；IGBT 訂單積壓至 2027。MCU 市場回穩，成長率 6-8%。車用半導體 CAGR 12-15%（至 2028）。",
-      "indicators": ["SiC 交期 >52 週、現貨溢價 40-80%", "全球 EV 滲透率 >20%"]
+      "note": "車規 SiC MOSFETs 交期仍逾 52 週，Onsemi/ST/Infineon 產能滿載；MCU 庫存已回到健康水位，國際大廠啟動漲價。全球 EV 滲透率約 22-27%，中國已突破 50%，帶動功率半導體需求持續擴張。",
+      "indicators": ["車規 SiC 交期 >52 週", "中國 EV 滲透率 >50%、全球 ~22-27%"]
     },
     {
       "name": "IC 設計",
       "phase": "growth",
-      "level": 50,
-      "trend": "flat",
-      "note": "AI ASIC 設計案量強勁，2025 全球前十大 fabless 營收 YoY +44% 達 $3,594 億。但手機 AP 重挫：聯發科/高通 H1 出貨 YoY -25%，記憶體成本首度超越 SoC。消費性 IC 疲弱，呈明顯 K 型分化。",
-      "indicators": ["聯發科/高通 H1 手機 AP 出貨 YoY -25%", "前十大 fabless 2025 營收 YoY +44%"]
+      "level": 65,
+      "trend": "up",
+      "note": "聯發科上修 2026 AI ASIC 營收目標至 20 億美元（翻倍）；台灣 IC 設計業 Q2 營收 YoY +11.8%，成長動能集中於 AI ASIC、高速傳輸與顯示驅動 IC。消費性 IC 庫存回到健康水位，2nm 手機旗艦晶片拉貨升溫。",
+      "indicators": ["聯發科 AI ASIC 營收目標上修至 $20 億", "台灣 IC 設計 Q2 營收 YoY +11.8%"]
     }
   ]
 }
