@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-09-14",
-  "source": "綜合 TrendForce、DIGITIMES、IEA、各廠財報與法說會、AtlasPCB、Astute Group",
+  "updatedAt": "2026-09-21",
+  "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報、BloombergNEF",
   "cycles": [
     {
       "name": "DRAM",
       "phase": "growth",
       "level": 75,
       "trend": "up",
-      "note": "Q3 合約價 QoQ +13~18%（TrendForce），Samsung 爭取再漲 20%、SK Hynix 取消長約價格上限。供給極度吃緊、庫存處歷史低點，但消費端需求轉弱使漲幅較上半年收斂。HBM 價格因三廠競爭開始 YoY 走跌，DDR5 獲利性反而可望超越 HBM3e。",
-      "indicators": ["Q3 合約價 QoQ +13~18%", "Q1 產業營收 QoQ +81%"]
+      "note": "Q3 合約價 QoQ 續漲 13-18%，較前幾季漲幅收斂但仍強勁。HBM 佔 DRAM 晶圓投片比重升至 23%，三大廠產能利用率逾 98%，DDR5 Server RDIMM Q2 漲幅達 49.7%。",
+      "indicators": ["合約價 QoQ +13~18%", "產能利用率 >98%"]
     },
     {
       "name": "NAND Flash",
       "phase": "growth",
-      "level": 68,
-      "trend": "up",
-      "note": "Q3 合約價 QoQ +10~15%，漲幅明顯收斂。企業級 SSD 價格較去年同期飆漲逾 6 倍，原廠將產能集中導向伺服器應用。NOR Flash / SLC NAND 下半年仍在漲價通道，但消費端已達價格承受極限，YMTC 產能（15~18 萬片/月）為全球供給提供緩衝。",
-      "indicators": ["Q3 合約價 QoQ +10~15%", "企業級 30TB SSD 價格 YoY +6x"]
+      "level": 55,
+      "trend": "flat",
+      "note": "Q3 合約價持平至微跌 0-5%，與 DRAM 走勢明顯分化。YMTC 產能達 15-18 萬片/月提供供給緩衝，QLC SSD 企業級出貨 YoY 成長逾 40%，供需相對均衡。",
+      "indicators": ["合約價 QoQ 0~-5%", "2026 年營收 YoY +112%"]
     },
     {
       "name": "晶圓代工",
       "phase": "growth",
-      "level": 82,
+      "level": 78,
       "trend": "up",
-      "note": "台積電 Q2 營收創新高 NT$1.27 兆（YoY +36%），毛利率 67.7% 歷史新高，先進製程占比達 77%，CoWoS 滿載且訂單排至 2027 年。聯電 Q1 稼動率 79%、成熟製程 ASP QoQ +5~15%；中芯 Q1 創營收新高、稼動率 93.7%。8 吋廠稼動率回升至近 90%。",
-      "indicators": ["台積電 Q2 毛利率 67.7%（歷史新高）", "CoWoS 交期 52~78 週、排至 2027"]
+      "note": "台積電 3nm 產能利用率超過 100%，CoWoS 先進封裝全年售罄。成熟製程（8 吋）前十大代工廠平均稼動率近 90%。2nm 量產啟動，資本支出上調至 600-640 億美元。",
+      "indicators": ["先進製程利用率 >100%", "8 吋平均稼動率 ~90%"]
     },
     {
       "name": "被動元件",
       "phase": "growth",
-      "level": 65,
+      "level": 72,
       "trend": "up",
-      "note": "Q3 村田、三星電機、國巨對高容/車規 MLCC 漲價 10~20%，KEMET 部分品項漲幅達 65%。日韓高端 MLCC 產線稼動率逾 80%、村田滿載，AI 伺服器用 MLCC 已成第三大 BOM 項目。高容 X6S/X7R 交期延長至 20~26 週，風華高科暫停接 0402/0603 訂單。",
-      "indicators": ["Q3 高規 MLCC 漲幅 10~20%", "高容 MLCC 交期延長至 20~26 週"]
+      "note": "AI 伺服器每機櫃用量達 44 萬顆 MLCC，推動高容值品嚴重缺貨。前五大 MLCC 廠稼動率 90-95%，通路庫存僅 1-1.5 個月（歷史均值 4.5 個月），交期延長至 20-26 週。H2 高容值品預估再漲 20-30%。",
+      "indicators": ["前五大廠稼動率 90-95%", "交期 20-26 週"]
     },
     {
       "name": "面板",
       "phase": "recovery",
-      "level": 30,
-      "trend": "flat",
-      "note": "9 月 TV/IT 面板價格全面止跌轉持平，65 吋 TV 面板 $173、55 吋 $123。Q3 電視備貨量 QoQ +15%，但 NB 面板拉貨 QoQ -15~20%。面板廠維持控產策略、稼動率約 80~85%，十月國慶假期將再調控供需平衡。整體仍處低水位復甦期。",
-      "indicators": ["9 月 TV/IT 面板價格 MoM 持平", "產業稼動率約 80~85%"]
+      "level": 38,
+      "trend": "up",
+      "note": "Q3 需求回溫，主要面板廠稼動率回升至約 90%，品牌客戶 Q3 電視面板採購量 QoQ 增加約 15% 備貨年底旺季。但全年電視出貨預估仍 YoY 下滑 0.6%，價格跌幅逐步收斂中。",
+      "indicators": ["Q3 稼動率 ~90%", "Q3 採購量 QoQ +15%"]
     },
     {
       "name": "PCB",
       "phase": "growth",
-      "level": 72,
+      "level": 70,
       "trend": "up",
-      "note": "AI 伺服器帶動高層數 HDI / ABF 載板強勁需求，Ajinomoto 宣布 Q3 ABF 膜漲價 30%。銅箔基板（CCL）成本 YoY +70% 以上，PCB 板價漲 10~30%。高頻高層板供不應求，但一般硬板面臨嚴峻毛利壓力，市場呈現「雙速」格局。",
-      "indicators": ["CCL 成本 YoY +70%+", "ABF 膜 Q3 漲價 30%"]
+      "note": "AI 伺服器帶動高層數 HDI/ABF 載板需求爆發，但上游 CCL 價格 H1 飆漲 20-40%，7 月再漲 70%。T-glass 玻纖布供需缺口逾 10%，AI 光模組 mSAP 基板市場 2025-2028 年 CAGR 預估達 6 倍成長。",
+      "indicators": ["CCL 價格 H1 漲 20-40%", "T-glass 供需缺口 >10%"]
     },
     {
       "name": "車用晶片",
-      "phase": "growth",
-      "level": 58,
+      "phase": "recovery",
+      "level": 40,
       "trend": "up",
-      "note": "2026 全球 EV 滲透率達 27~28%（IEA），中國近 60%。車規 SiC MOSFET 交期逾 52 週，8 吋 SiC 晶圓產能嚴重不足；但 6 吋 legacy SiC 模組因中國擴產出現供過於求、價格軟化。車用 MCU 每車平均 40~60 顆、高階 EV 逾 80 顆，Bosch 加州廠 7 月開始 SiC 試產。",
-      "indicators": ["2026 全球 EV 滲透率 ~27%", "車規 SiC MOSFET 交期 52+ 週"]
+      "note": "SiC MOSFET 交期仍長達 52 週以上，800V 架構加速滲透。但傳統 6 吋 SiC 與標準車規模組因中國產能擴張出現供過於求。美國 EV 滲透率 Q3 達 14%，全球 EV 銷售續創新高但部分市場增速放緩。",
+      "indicators": ["SiC MOSFET 交期 52+ 週", "美國 EV 滲透率 Q3 ~14%"]
     },
     {
       "name": "IC 設計",
       "phase": "growth",
-      "level": 65,
-      "trend": "up",
-      "note": "聯發科上調 AI ASIC 營收展望至逾 20 億美元（翻倍），已切入 Google TPU 8t 合作。台灣 IC 設計 Q2 營收 YoY +11.8%，成長動能集中在 AI ASIC、高速傳輸與顯示驅動 IC。終端庫存回到健康水位，下半年 2nm 旗艦手機晶片拉貨升溫，指標廠啟動結構性調價。",
-      "indicators": ["聯發科 AI ASIC 營收展望翻倍突破 $2B", "台灣 IC 設計 Q2 營收 YoY +11.8%"]
+      "level": 55,
+      "trend": "flat",
+      "note": "AI ASIC 設計案量持續高成長，聯發科與高通 9 月推出首批 2nm 旗艦 SoC。但消費端承壓——記憶體漲價導致手機/PC 出貨目標下修，中國品牌縮減 AP 採購，4/3nm 投片量減 10-15%。聯發科庫存天數升至 163 天。",
+      "indicators": ["4/3nm 投片量減 10-15%", "聯發科庫存天數 163 天"]
     }
   ]
 }
