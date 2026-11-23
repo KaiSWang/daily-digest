@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-11-15",
-  "source": "綜合 TrendForce、DIGITIMES、IC Insights、各廠財報、WitsView、BigGo Finance",
+  "updatedAt": "2026-11-24",
+  "source": "綜合 TrendForce、DIGITIMES、VLSI Korea、Sigmaintell、AtlasPCB、Benchmark Minerals、各廠財報",
   "cycles": [
     {
       "name": "DRAM",
-      "phase": "peak",
-      "level": 85,
+      "phase": "growth",
+      "level": 75,
       "trend": "up",
-      "note": "AI驅動DRAM超級循環持續，三星與SK海力士庫存天數跌破10天。TrendForce預估Q4合約價QoQ上漲10-15%，HBM4價格年增117%，產能大幅轉向HBM導致DDR5供給持續緊張。",
-      "indicators": ["Q4合約價QoQ +10~15%", "原廠庫存天數<10天"]
+      "note": "Q4 合約價續漲 10-15% QoQ（TrendForce），但漲幅趨緩；HBM 佔 DRAM 晶圓投片約 23%，供應持續吃緊；原廠庫存低於 10 天，產能利用率維持 90-95% 高檔，預估景氣高峰落在 2027Q1-Q2。",
+      "indicators": ["Q4 DRAM 合約價 QoQ +10-15%", "HBM 佔 DRAM wafer ~23%，原廠庫存 <10 天"]
     },
     {
       "name": "NAND Flash",
-      "phase": "peak",
-      "level": 78,
-      "trend": "flat",
-      "note": "NAND現貨價21個月漲勢於10月止步趨平，但企業級SSD合約價Q4仍看漲23-28%。消費端壓力持續，供需結構分化明顯——AI伺服器端強勁、消費端疲弱。",
-      "indicators": ["企業級SSD Q4合約價QoQ +23~28%", "NAND現貨價10月轉平（結束21個月漲勢）"]
+      "phase": "growth",
+      "level": 70,
+      "trend": "up",
+      "note": "Q4 合約價預估 QoQ +15-20%，企業級 SSD 為唯一加速上漲品項（bit 需求 YoY +80%）；但 TrendForce 11 月示警 2027 年供需反轉，Q1 可能轉跌，消費端壓力漸增。",
+      "indicators": ["Q4 NAND 合約價 QoQ +15-20%", "企業級 SSD bit 需求 YoY +80%"]
     },
     {
       "name": "晶圓代工",
-      "phase": "peak",
-      "level": 88,
+      "phase": "growth",
+      "level": 78,
       "trend": "up",
-      "note": "台積電Q3營收$46.72B創新高（QoQ +16.2%），2奈米營收占比衝8%，先進製程滿載。成熟製程Q4稼動率衝上91%且2027Q1全面喊漲。台積電Q4市占率約70.4%，資本支出維持$60-64B高水位。",
-      "indicators": ["台積電Q3營收$46.72B（QoQ +16.2%）", "成熟製程Q4稼動率91%"]
+      "note": "Q4 全球主要晶圓廠平均產能利用率預估達 91%（Sigmaintell）；聯電 Q4 利用率 >91%、22/28nm 近 93%，已宣布 2027 年漲價 10%；台積電 Q4 營收指引 $52.3-54.3B，先進製程（7nm↓）佔營收 79%；成熟製程漲價壓力持續擴大。",
+      "indicators": ["Q4 全球晶圓廠利用率預估 ~91%", "台積電 Q4 營收指引 $52.3-54.3B（QoQ +12-16%）"]
     },
     {
       "name": "被動元件",
       "phase": "growth",
-      "level": 75,
+      "level": 72,
       "trend": "up",
-      "note": "MLCC進入超級循環，10月底再啟新一輪漲價，交期拉長至40週。瑞銀報告指出庫存創歷史新低、日韓台廠B/B ratio飆升。AI伺服器每機櫃需60萬顆MLCC，村田宣布停產部分料號加劇缺貨。",
-      "indicators": ["MLCC交期拉長至40週", "MLCC庫存創歷史新低（B/B ratio飆升）"]
+      "note": "高階 MLCC 交期拉長至 5-10 個月，SEMCO 8 月起漲價 30%、太陽誘電 9 月二度調漲；Murata 暫停接一般品訂單，AI 伺服器每機架需約 60 萬顆 MLCC，結構性缺貨預估延續至 2027 年。",
+      "indicators": ["高階 MLCC 交期 5-10 個月", "SEMCO 漲價 30%、部分高容值品項斷貨"]
     },
     {
       "name": "面板",
       "phase": "decline",
       "level": 30,
       "trend": "down",
-      "note": "11月TV、監視器、筆電面板報價持平，需求疲弱壓抑漲價空間。10月大世代面板稼動率下探79.6%，面板廠以減產控價，但成本端壓力（記憶體、材料漲價）擠壓利潤。",
-      "indicators": ["10月大世代面板稼動率79.6%", "11月三大應用面板報價持平"]
+      "note": "11 月 TV/MNT/NB 面板價格全面持平，需求端同步走弱：Q4 TV 採購 QoQ -5%、MNT 出貨 -9%、NB 需求 -20% 以上；10 月大世代稼動率降至 79.6%，預估 Q4 至明年 1 月持續低於 80%。",
+      "indicators": ["11 月三大應用面板價格持平（65 吋均價 $173）", "10 月大世代稼動率 79.6%、Q4 NB 需求 QoQ -20%+"]
     },
     {
       "name": "PCB",
       "phase": "peak",
-      "level": 87,
+      "level": 82,
       "trend": "up",
-      "note": "AI伺服器搶爆PCB產能，高階板交期拉長至30個月，訂單已排至2030年。銅箔基板（CCL）2026全年漲勢未止，PCB原材料成本7月暴漲70%。花旗喊每季漲價延續至2027年底，PC供應鏈慘遭排擠。",
-      "indicators": ["高階PCB交期達30個月（訂單至2030年）", "PCB原材料成本YoY +70%"]
+      "note": "AI 伺服器帶動 ABF 載板均價每季漲逾 7%，高 Tg 銅箔基板 YoY +70%；HDI 板價漲 30-50%；北美 PCB 訂單 7 月 YoY +62%（B/B ratio 1.46）；欣興、南電等載板廠產能滿載擴產中，供給偏緊預估持續至 2027Q2。",
+      "indicators": ["ABF 載板均價每季 QoQ +7%+", "高 Tg CCL YoY +70%、北美 PCB B/B ratio 1.46"]
     },
     {
       "name": "車用晶片",
-      "phase": "growth",
-      "level": 55,
+      "phase": "recovery",
+      "level": 45,
       "trend": "up",
-      "note": "功率半導體2026年景氣拐點確認，SiC在800V車款滲透率升至71.6%。全球EV牽引逆變器安裝量Q1維持韌性，MCU庫存逐步正常化中，IGBT仍主導上半場但SiC加速上車。",
-      "indicators": ["SiC於800V車款滲透率71.6%", "功率半導體2026年景氣拐點確認"]
+      "note": "全球 EV 10 月銷量 209 萬輛（YoY +8%），滲透率達約 31%，歐洲 YoY +36% 強勁但中國 YoY -12%；SiC 功率元件持續緊缺，交期偏長；車用 MCU 庫存逐步正常化，整體復甦但分化明顯。",
+      "indicators": ["全球 EV 10 月滲透率 ~31%、YoY +8%", "SiC 供應持續緊缺、MCU 庫存趨正常化"]
     },
     {
       "name": "IC 設計",
-      "phase": "growth",
-      "level": 72,
+      "phase": "peak",
+      "level": 85,
       "trend": "up",
-      "note": "全球前十大IC設計2Q26營收YoY +73%，NVIDIA佔逾六成份額。聯發科AI ASIC動能強勁，花旗給出6,800元目標價。AI ASIC設計案量持續爆發，但消費性IC復甦仍落後，結構性分化持續。",
-      "indicators": ["前十大IC設計2Q26營收YoY +73%", "聯發科AI ASIC目標價6,800元（花旗）"]
+      "note": "2Q26 全球前十大 fabless 營收逾 $1,414 億（YoY +73%），NVIDIA 佔 64%；聯發科首顆 AI ASIC Q4 貢獻上修至 $25 億，2026 年資料中心營收預估逾 $20 億；Broadcom AI ASIC（OpenAI/Google TPU）開始出貨，AI 驅動的結構性成長持續。",
+      "indicators": ["前十大 fabless 2Q26 營收 YoY +73%", "聯發科 AI ASIC Q4 貢獻 $25 億"]
     }
   ]
 }
